@@ -97,6 +97,9 @@ const Process = () => {
     setCurrentStep((prev) => (prev - 1 + steps.length) % steps.length);
   };
 
+  const currentStepData = steps[currentStep];
+  const IconComponent = currentStepData.icon;
+
   return (
     <section id="process" className="py-16 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -118,15 +121,18 @@ const Process = () => {
           
           {/* Key Metrics */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-            {metrics.map((metric, index) => (
-              <div key={index} className="text-center bg-white rounded-xl p-4 shadow-lg">
-                <div className="inline-flex items-center justify-center w-10 h-10 bg-gradient-to-r from-green-500 to-blue-500 rounded-lg mb-3">
-                  <metric.icon className="w-5 h-5 text-white" />
+            {metrics.map((metric, index) => {
+              const MetricIcon = metric.icon;
+              return (
+                <div key={index} className="text-center bg-white rounded-xl p-4 shadow-lg">
+                  <div className="inline-flex items-center justify-center w-10 h-10 bg-gradient-to-r from-green-500 to-blue-500 rounded-lg mb-3">
+                    <MetricIcon className="w-5 h-5 text-white" />
+                  </div>
+                  <div className="text-xl md:text-2xl font-bold text-gray-900 mb-1">{metric.value}</div>
+                  <div className="text-xs text-gray-600">{metric.label}</div>
                 </div>
-                <div className="text-xl md:text-2xl font-bold text-gray-900 mb-1">{metric.value}</div>
-                <div className="text-xs text-gray-600">{metric.label}</div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
 
@@ -171,21 +177,21 @@ const Process = () => {
             {/* Content */}
             <div>
               <div className="flex items-center gap-4 mb-6">
-                <div className={`w-16 h-16 bg-gradient-to-r ${steps[currentStep].color} rounded-2xl flex items-center justify-center text-white`}>
-                  <steps[currentStep].icon className="w-8 h-8" />
+                <div className={`w-16 h-16 bg-gradient-to-r ${currentStepData.color} rounded-2xl flex items-center justify-center text-white`}>
+                  <IconComponent className="w-8 h-8" />
                 </div>
                 <div>
-                  <div className="text-sm font-medium text-gray-500 mb-1">Step {steps[currentStep].number}</div>
-                  <h3 className="text-2xl font-bold text-gray-900">{steps[currentStep].title}</h3>
+                  <div className="text-sm font-medium text-gray-500 mb-1">Step {currentStepData.number}</div>
+                  <h3 className="text-2xl font-bold text-gray-900">{currentStepData.title}</h3>
                 </div>
               </div>
               
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                {steps[currentStep].description}
+                {currentStepData.description}
               </p>
               
               <div className="space-y-3">
-                {steps[currentStep].details.map((detail, detailIndex) => (
+                {currentStepData.details.map((detail, detailIndex) => (
                   <div key={detailIndex} className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
                     <span className="text-gray-700">{detail}</span>
@@ -195,22 +201,22 @@ const Process = () => {
             </div>
 
             {/* Visual */}
-            <div className={`${steps[currentStep].bgColor} rounded-2xl p-6 border border-gray-100 relative overflow-hidden`}>
+            <div className={`${currentStepData.bgColor} rounded-2xl p-6 border border-gray-100 relative overflow-hidden`}>
               <div className="relative z-10">
                 <div className="flex items-center justify-between mb-6">
-                  <div className={`w-20 h-20 bg-gradient-to-r ${steps[currentStep].color} rounded-2xl flex items-center justify-center text-white text-2xl font-bold`}>
-                    {steps[currentStep].number}
+                  <div className={`w-20 h-20 bg-gradient-to-r ${currentStepData.color} rounded-2xl flex items-center justify-center text-white text-2xl font-bold`}>
+                    {currentStepData.number}
                   </div>
                   <div className="text-right">
                     <div className="text-sm text-gray-500">Timeline</div>
-                    <div className="text-lg font-semibold text-gray-700">{steps[currentStep].timeline}</div>
+                    <div className="text-lg font-semibold text-gray-700">{currentStepData.timeline}</div>
                   </div>
                 </div>
                 
                 <div className="bg-white/60 rounded-xl p-4">
-                  <h4 className="font-semibold text-gray-900 mb-3">{steps[currentStep].title}</h4>
+                  <h4 className="font-semibold text-gray-900 mb-3">{currentStepData.title}</h4>
                   <div className="space-y-2">
-                    {steps[currentStep].details.slice(0, 2).map((detail, i) => (
+                    {currentStepData.details.slice(0, 2).map((detail, i) => (
                       <div key={i} className="text-sm text-gray-600 flex items-center gap-2">
                         <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
                         {detail}
@@ -221,7 +227,7 @@ const Process = () => {
               </div>
               
               {/* Decorative elements */}
-              <div className={`absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-r ${steps[currentStep].color} rounded-full opacity-10`}></div>
+              <div className={`absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-r ${currentStepData.color} rounded-full opacity-10`}></div>
             </div>
           </div>
 
@@ -230,7 +236,7 @@ const Process = () => {
             <p className="text-gray-600">
               Step {currentStep + 1} of {steps.length} • 
               <span className="font-medium text-gray-900 ml-1">
-                {steps[currentStep].timeline}
+                {currentStepData.timeline}
               </span>
             </p>
           </div>
