@@ -1,79 +1,71 @@
 import React from 'react';
-import { Code, Brain, BarChart3, Headphones, Shield, Zap, Globe, Users } from 'lucide-react';
+import { Code, Brain, BarChart3, Headphones, Shield, Zap, Palette, Users } from 'lucide-react';
 
 const Services = () => {
-  const industries = [
+  const services = [
     {
       icon: Code,
       title: 'Full-Stack Development',
-      description: 'Custom web and mobile applications with modern frameworks and scalable architectures',
+      description: 'Custom web and mobile applications with modern frameworks',
       skills: ['React', 'Node.js', 'Python', 'TypeScript'],
-      gradient: 'from-blue-600 to-blue-800',
-      hoverGradient: 'from-blue-700 to-blue-900',
-      bgPattern: 'bg-blue-50'
+      color: '#3519E2',
+      bgColor: 'bg-purple-50'
     },
     {
       icon: Brain,
       title: 'AI & Machine Learning',
-      description: 'Intelligent solutions leveraging artificial intelligence and advanced data science',
+      description: 'Intelligent solutions leveraging artificial intelligence',
       skills: ['TensorFlow', 'PyTorch', 'NLP', 'Computer Vision'],
-      gradient: 'from-purple-600 to-purple-800',
-      hoverGradient: 'from-purple-700 to-purple-900',
-      bgPattern: 'bg-purple-50'
+      color: '#8b5cf6',
+      bgColor: 'bg-purple-50'
     },
     {
       icon: BarChart3,
       title: 'Data Science & Analytics',
-      description: 'Transform complex data into actionable business insights and strategic decisions',
+      description: 'Transform complex data into actionable business insights',
       skills: ['Python', 'R', 'SQL', 'Tableau'],
-      gradient: 'from-green-600 to-green-800',
-      hoverGradient: 'from-green-700 to-green-900',
-      bgPattern: 'bg-green-50'
+      color: '#10b981',
+      bgColor: 'bg-green-50'
     },
     {
       icon: Headphones,
-      title: 'Customer Success & Sales',
-      description: 'Building lasting customer relationships and driving sustainable business growth',
+      title: 'Customer Success',
+      description: 'Building lasting customer relationships and growth',
       skills: ['CRM', 'Support', 'Training', 'Analytics'],
-      gradient: 'from-orange-600 to-orange-800',
-      hoverGradient: 'from-orange-700 to-orange-900',
-      bgPattern: 'bg-orange-50'
+      color: '#f59e0b',
+      bgColor: 'bg-yellow-50'
     },
     {
       icon: Shield,
       title: 'DevOps & Infrastructure',
-      description: 'Scalable cloud infrastructure and automated deployment pipelines',
+      description: 'Scalable cloud infrastructure and deployment pipelines',
       skills: ['AWS', 'Docker', 'Kubernetes', 'CI/CD'],
-      gradient: 'from-red-600 to-red-800',
-      hoverGradient: 'from-red-700 to-red-900',
-      bgPattern: 'bg-red-50'
+      color: '#ef4444',
+      bgColor: 'bg-red-50'
     },
     {
-      icon: Globe,
+      icon: Palette,
       title: 'UI/UX Design',
-      description: 'User-centered design that creates memorable experiences and drives conversions',
-      skills: ['Figma', 'Sketch', 'Prototyping', 'User Research'],
-      gradient: 'from-pink-600 to-pink-800',
-      hoverGradient: 'from-pink-700 to-pink-900',
-      bgPattern: 'bg-pink-50'
+      description: 'User-centered design creating memorable experiences',
+      skills: ['Figma', 'Sketch', 'Prototyping', 'Research'],
+      color: '#ec4899',
+      bgColor: 'bg-pink-50'
     },
     {
       icon: Zap,
       title: 'Quality Assurance',
-      description: 'Comprehensive testing strategies ensuring robust, reliable software delivery',
-      skills: ['Automation', 'Manual Testing', 'Performance', 'Security'],
-      gradient: 'from-yellow-600 to-yellow-800',
-      hoverGradient: 'from-yellow-700 to-yellow-900',
-      bgPattern: 'bg-yellow-50'
+      description: 'Comprehensive testing strategies ensuring reliability',
+      skills: ['Automation', 'Manual', 'Performance', 'Security'],
+      color: '#eab308',
+      bgColor: 'bg-yellow-50'
     },
     {
       icon: Users,
       title: 'Project Management',
-      description: 'Strategic project leadership ensuring on-time, on-budget successful delivery',
+      description: 'Strategic project leadership ensuring successful delivery',
       skills: ['Agile', 'Scrum', 'Leadership', 'Strategy'],
-      gradient: 'from-teal-600 to-teal-800',
-      hoverGradient: 'from-teal-700 to-teal-900',
-      bgPattern: 'bg-teal-50'
+      color: '#06b6d4',
+      bgColor: 'bg-cyan-50'
     }
   ];
 
@@ -85,96 +77,89 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-24 bg-gradient-to-b from-white to-gray-50">
+    <section id="services" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-20">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-800 text-sm font-medium mb-6">
-            <Zap className="w-4 h-4 mr-2" />
-            Industries We Excel In
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center px-4 py-2 rounded-full text-white text-sm font-medium mb-6" style={{backgroundColor: '#3519E2'}}>
+            <Zap className="w-3 h-3 mr-2" />
+            Our Expertise
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             We Source & Hire
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-              For Every Industry
+            <span className="block text-transparent bg-clip-text" style={{backgroundImage: 'linear-gradient(135deg, #3519E2, #8b5cf6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
+              Top Talent Across Industries
             </span>
           </h2>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-            From startups to Fortune 500 companies, we understand the unique talent requirements across industries and deliver custom hiring solutions.
+          <p className="text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
+            From startups to Fortune 500 companies, we understand unique talent requirements and deliver custom hiring solutions.
           </p>
           
           {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">{stat.value}</div>
+              <div key={index} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+                <div className="text-2xl md:text-3xl font-bold mb-2" style={{color: '#3519E2'}}>{stat.value}</div>
                 <div className="text-gray-600 text-sm">{stat.label}</div>
               </div>
             ))}
           </div>
         </div>
         
-        {/* Industries Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {industries.map((industry, index) => (
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {services.map((service, index) => (
             <div 
               key={index}
-              className="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border border-gray-100 overflow-hidden"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group"
             >
-              {/* Background Pattern */}
-              <div className={`absolute inset-0 ${industry.bgPattern} opacity-0 group-hover:opacity-20 transition-opacity duration-500`}></div>
-              
-              {/* Content */}
-              <div className="relative z-10">
-                {/* Icon */}
-                <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-r ${industry.gradient} group-hover:${industry.hoverGradient} mb-6 text-white transition-all duration-300 group-hover:scale-110 group-hover:rotate-3`}>
-                  <industry.icon className="h-8 w-8" />
-                </div>
-                
-                {/* Title */}
-                <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-gray-800 transition-colors">
-                  {industry.title}
-                </h3>
-                
-                {/* Description */}
-                <p className="text-gray-600 leading-relaxed mb-6 text-sm">
-                  {industry.description}
-                </p>
-                
-                {/* Skills */}
-                <div className="flex flex-wrap gap-2">
-                  {industry.skills.map((skill, skillIndex) => (
-                    <span 
-                      key={skillIndex}
-                      className={`px-3 py-1 text-xs font-medium rounded-full bg-gradient-to-r ${industry.gradient} text-white opacity-80 group-hover:opacity-100 transition-opacity`}
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
+              {/* Icon */}
+              <div 
+                className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"
+                style={{backgroundColor: `${service.color}15`}}
+              >
+                <service.icon className="h-5 w-5" style={{color: service.color}} />
               </div>
               
-              {/* Hover gradient overlay */}
-              <div className={`absolute inset-0 bg-gradient-to-r ${industry.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
+              {/* Title */}
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                {service.title}
+              </h3>
               
-              {/* Decorative elements */}
-              <div className="absolute top-4 right-4 w-8 h-8 bg-white/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="absolute bottom-4 left-4 w-12 h-12 bg-white/5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100"></div>
+              {/* Description */}
+              <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                {service.description}
+              </p>
+              
+              {/* Skills */}
+              <div className="flex flex-wrap gap-1">
+                {service.skills.map((skill, skillIndex) => (
+                  <span 
+                    key={skillIndex}
+                    className="px-2 py-1 text-xs font-medium rounded-md bg-gray-100 text-gray-700"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
             </div>
           ))}
         </div>
 
         {/* CTA Section */}
-        <div className="mt-20 text-center">
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-12 text-white">
-            <h3 className="text-3xl md:text-4xl font-bold mb-4">
+        <div className="mt-16 text-center">
+          <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
               Ready to Find Your Perfect Hire?
             </h3>
-            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
               Tell us your requirements and we'll source, vet, and deliver the ideal candidate for your specific needs.
             </p>
-            <button className="bg-white text-blue-600 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+            <button 
+              className="inline-flex items-center px-8 py-4 rounded-xl font-semibold text-lg text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              style={{backgroundColor: '#3519E2'}}
+            >
+              <Users className="w-4 h-4 mr-2" />
               Share Your Requirements
             </button>
           </div>
