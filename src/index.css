@@ -43,13 +43,13 @@ body {
 
 /* Improved focus styles */
 *:focus {
-  outline: 2px solid #3b82f6;
+  outline: 2px solid #3519E2;
   outline-offset: 2px;
 }
 
 /* Text selection */
 ::selection {
-  background: #3b82f6;
+  background: #3519E2;
   color: white;
 }
 
