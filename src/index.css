@@ -222,15 +222,31 @@ body {
 
 /* Improved form styles */
 .form-input {
-  @apply w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 text-gray-900 placeholder-gray-400;
+  @apply w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 transition-all duration-300 text-gray-900 placeholder-gray-400;
+  --tw-ring-color: #3519E2;
+  --tw-border-opacity: 1;
+}
+
+.form-input:focus {
+  border-color: #3519E2;
 }
 
 .form-textarea {
-  @apply w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 text-gray-900 placeholder-gray-400 resize-none;
+  @apply w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 transition-all duration-300 text-gray-900 placeholder-gray-400 resize-none;
+  --tw-ring-color: #3519E2;
+}
+
+.form-textarea:focus {
+  border-color: #3519E2;
 }
 
 .form-select {
-  @apply w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 text-gray-900;
+  @apply w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 transition-all duration-300 text-gray-900;
+  --tw-ring-color: #3519E2;
+}
+
+.form-select:focus {
+  border-color: #3519E2;
 }
 
 /* Loading states */
