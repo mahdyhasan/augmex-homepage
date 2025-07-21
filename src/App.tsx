@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from './components/Header';
 import Hero from './components/Hero';
 import CombinedSection from './components/CombinedSection';
 import Services from './components/Services';
@@ -13,13 +12,10 @@ import WhyChooseUs from './components/WhyChooseUs';
 import CTA from './components/CTA';
 import Contact from './components/Contact';
 import FAQ from './components/FAQ';
-import Footer from './components/Footer';
-import FooterBottom from './components/FooterBottom';
 
 function App() {
   return (
     <div className="min-h-screen bg-white">
-      <Header />
       <Hero />
       <Services />
       <CombinedSection />
@@ -33,8 +29,6 @@ function App() {
       <CTA />
       <Contact />
       <FAQ />
-      <Footer />
-      <FooterBottom />
     </div>
   );
 }
