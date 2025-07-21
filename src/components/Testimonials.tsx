@@ -72,7 +72,7 @@ const Testimonials = () => {
   };
 
   useEffect(() => {
-    const timer = setInterval(nextSlide, 6000);
+    const timer = setInterval(nextSlide, 8000);
     return () => clearInterval(timer);
   }, []);
 
@@ -93,12 +93,12 @@ const Testimonials = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100/10 text-blue-300 text-sm font-medium mb-6 backdrop-blur-sm">
             <Star className="w-4 h-4 mr-2" />
-            Client Success Stories
+            Trusted by Industry Leaders Worldwide
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-            Trusted by Industry
+            Success Stories From
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
-              Leaders Worldwide
+              Industry Leaders
             </span>
           </h2>
           <p className="text-xl text-blue-200 max-w-3xl mx-auto leading-relaxed">
@@ -108,58 +108,59 @@ const Testimonials = () => {
 
         {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          {stats.map((stat, index) => (
-            <div 
-              key={index}
-              className="text-center bg-white/5 backdrop-blur-lg rounded-2xl p-6 border border-white/10"
-            >
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-blue-600/20 mb-4">
-                <stat.icon className="w-6 h-6 text-blue-400" />
+          {stats.map((stat, index) => {
+            const IconComponent = stat.icon;
+            return (
+              <div 
+                key={index}
+                className="text-center bg-white/5 backdrop-blur-lg rounded-2xl p-6 border border-white/10"
+              >
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-blue-600/20 mb-4">
+                  <IconComponent className="w-6 h-6 text-blue-400" />
+                </div>
+                <div className="text-3xl font-bold text-white mb-2">{stat.value}</div>
+                <div className="text-blue-200 text-sm">{stat.label}</div>
               </div>
-              <div className="text-3xl font-bold text-white mb-2">{stat.value}</div>
-              <div className="text-blue-200 text-sm">{stat.label}</div>
-            </div>
-          ))}
+            );
+          })}
         </div>
         
-        {/* Main Testimonial */}
-        <div className="relative">
-          <div className="max-w-5xl mx-auto">
-            <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 md:p-12 border border-white/20 shadow-2xl">
-              {/* Quote icon and rating */}
-              <div className="flex items-center justify-between mb-8">
-                <Quote className="h-12 w-12 text-blue-300" />
-                <div className="flex items-center gap-1">
-                  {[...Array(testimonials[currentSlide].rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                  ))}
+        {/* Main Testimonial Slider */}
+        <div className="relative max-w-5xl mx-auto">
+          <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 md:p-12 border border-white/20 shadow-2xl">
+            {/* Quote icon and rating */}
+            <div className="flex items-center justify-between mb-8">
+              <Quote className="h-12 w-12 text-blue-300" />
+              <div className="flex items-center gap-1">
+                {[...Array(testimonials[currentSlide].rating)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                ))}
+              </div>
+            </div>
+            
+            {/* Testimonial text */}
+            <p className="text-white leading-relaxed mb-8 text-xl lg:text-2xl italic">
+              "{testimonials[currentSlide].text}"
+            </p>
+            
+            {/* Author info and metrics */}
+            <div className="flex flex-col md:flex-row items-center justify-between">
+              <div className="flex items-center mb-4 md:mb-0">
+                <img
+                  src={testimonials[currentSlide].avatar}
+                  alt={testimonials[currentSlide].author}
+                  className="w-16 h-16 rounded-full mr-4 object-cover border-2 border-white/20"
+                />
+                <div>
+                  <div className="font-bold text-white text-lg">{testimonials[currentSlide].author}</div>
+                  <div className="text-blue-200">{testimonials[currentSlide].role}</div>
+                  <div className="text-blue-300 text-sm">{testimonials[currentSlide].company} • {testimonials[currentSlide].industry}</div>
                 </div>
               </div>
               
-              {/* Testimonial text */}
-              <p className="text-white leading-relaxed mb-8 text-xl lg:text-2xl italic">
-                "{testimonials[currentSlide].text}"
-              </p>
-              
-              {/* Author info and metrics */}
-              <div className="flex flex-col md:flex-row items-center justify-between">
-                <div className="flex items-center mb-4 md:mb-0">
-                  <img
-                    src={testimonials[currentSlide].avatar}
-                    alt={testimonials[currentSlide].author}
-                    className="w-16 h-16 rounded-full mr-4 object-cover border-2 border-white/20"
-                  />
-                  <div>
-                    <div className="font-bold text-white text-lg">{testimonials[currentSlide].author}</div>
-                    <div className="text-blue-200">{testimonials[currentSlide].role}</div>
-                    <div className="text-blue-300 text-sm">{testimonials[currentSlide].company} • {testimonials[currentSlide].industry}</div>
-                  </div>
-                </div>
-                
-                <div className="bg-blue-600/20 rounded-xl px-4 py-2">
-                  <div className="text-white font-semibold">{testimonials[currentSlide].metric}</div>
-                  <div className="text-blue-200 text-sm">Key Result</div>
-                </div>
+              <div className="bg-blue-600/20 rounded-xl px-4 py-2">
+                <div className="text-white font-semibold">{testimonials[currentSlide].metric}</div>
+                <div className="text-blue-200 text-sm">Key Result</div>
               </div>
             </div>
           </div>
@@ -194,39 +195,13 @@ const Testimonials = () => {
               <ChevronRight className="h-6 w-6 text-white group-hover:text-blue-300 transition-colors" />
             </button>
           </div>
-        </div>
 
-        {/* Additional testimonials preview */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {testimonials.slice(0, 3).map((testimonial, index) => (
-            <div 
-              key={index}
-              className={`bg-white/5 backdrop-blur-lg rounded-2xl p-6 border border-white/10 transition-all duration-300 hover:bg-white/10 cursor-pointer ${
-                index === currentSlide ? 'ring-2 ring-blue-400' : ''
-              }`}
-              onClick={() => setCurrentSlide(index)}
-            >
-              <div className="flex items-center gap-1 mb-3">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
-                ))}
-              </div>
-              <p className="text-white/80 text-sm leading-relaxed mb-4 line-clamp-3">
-                "{testimonial.text.slice(0, 120)}..."
-              </p>
-              <div className="flex items-center">
-                <img
-                  src={testimonial.avatar}
-                  alt={testimonial.author}
-                  className="w-8 h-8 rounded-full mr-3 object-cover"
-                />
-                <div>
-                  <div className="text-white text-sm font-medium">{testimonial.author}</div>
-                  <div className="text-blue-200 text-xs">{testimonial.company}</div>
-                </div>
-              </div>
-            </div>
-          ))}
+          {/* Progress indicator */}
+          <div className="mt-6 text-center">
+            <p className="text-blue-300 text-sm">
+              {currentSlide + 1} of {testimonials.length} testimonials
+            </p>
+          </div>
         </div>
       </div>
     </section>
