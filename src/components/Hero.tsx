@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Play, Shield, Clock, Star, Sparkles } from 'lucide-react';
+import { ArrowRight, Play, Shield, Clock, Star, CheckCircle } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -31,29 +31,28 @@ const Hero = () => {
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight">
-              Elite Remote
+              We Find & Hire
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-teal-300">
-                Talent Delivered
+                Perfect Talent
               </span>
               <span className="block text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-normal text-blue-200 mt-2">
-                In 48 Hours or Less
+                Based on Your Exact Requirements
               </span>
             </h1>
             
             <p className="text-xl md:text-2xl text-blue-100/90 mb-8 max-w-2xl leading-relaxed">
-              Access the top 1% of vetted remote professionals from Bangladesh. 
-              Build your dream team with world-class talent at unbeatable value.
+              Stop struggling with endless hiring processes. We source, vet, and deliver exceptional remote professionals tailored to your specific needs and company culture.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <button className="group bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 flex items-center justify-center transform hover:scale-105 shadow-2xl hover:shadow-blue-500/25">
-                <Sparkles className="mr-2 h-5 w-5" />
-                Start Hiring Today
+                <CheckCircle className="mr-2 h-5 w-5" />
+                Tell Us Your Requirements
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </button>
               <button className="group border-2 border-white/30 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-white/10 transition-all duration-300 flex items-center justify-center backdrop-blur-sm">
                 <Play className="mr-2 h-5 w-5" />
-                Watch Success Stories
+                See How We Work
               </button>
             </div>
 
@@ -73,8 +72,8 @@ const Hero = () => {
                   <Clock className="w-5 h-5 text-cyan-400" />
                 </div>
                 <div>
-                  <span className="text-2xl font-bold text-white block">24-48H</span>
-                  <span className="text-sm">Quick Delivery</span>
+                  <span className="text-2xl font-bold text-white block">2-3 Weeks</span>
+                  <span className="text-sm">Hire Timeline</span>
                 </div>
               </div>
               <div className="flex items-center gap-3">
@@ -82,57 +81,69 @@ const Hero = () => {
                   <Star className="w-5 h-5 text-teal-400" />
                 </div>
                 <div>
-                  <span className="text-2xl font-bold text-white block">99.5%</span>
+                  <span className="text-2xl font-bold text-white block">98%</span>
                   <span className="text-sm">Success Rate</span>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Right Column - Visual Elements */}
+          {/* Right Column - Process Visual */}
           <div className="relative lg:block hidden">
             <div className="relative">
-              {/* Main card */}
+              {/* Main process card */}
               <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 shadow-2xl">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold">AI</span>
-                  </div>
-                  <div>
-                    <h3 className="text-white font-semibold">Sarah Chen</h3>
-                    <p className="text-blue-200 text-sm">Senior AI Engineer</p>
-                  </div>
-                  <div className="ml-auto">
-                    <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                  </div>
+                <div className="text-center mb-6">
+                  <h3 className="text-white font-bold text-xl mb-2">Our Process</h3>
+                  <p className="text-blue-200 text-sm">From requirement to hire</p>
                 </div>
-                <div className="space-y-3">
-                  <div className="flex justify-between text-sm">
-                    <span className="text-blue-200">Availability</span>
-                    <span className="text-white">Immediate</span>
+                
+                <div className="space-y-4">
+                  <div className="flex items-center gap-4 p-3 bg-white/5 rounded-xl">
+                    <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white text-sm font-bold">1</div>
+                    <div>
+                      <div className="text-white text-sm font-medium">Requirement Analysis</div>
+                      <div className="text-blue-200 text-xs">Understanding your needs</div>
+                    </div>
                   </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-blue-200">Rate</span>
-                    <span className="text-white">$45-65/hr</span>
+                  
+                  <div className="flex items-center gap-4 p-3 bg-white/5 rounded-xl">
+                    <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-white text-sm font-bold">2</div>
+                    <div>
+                      <div className="text-white text-sm font-medium">Talent Sourcing</div>
+                      <div className="text-blue-200 text-xs">Finding perfect matches</div>
+                    </div>
                   </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-blue-200">Experience</span>
-                    <span className="text-white">8+ Years</span>
+                  
+                  <div className="flex items-center gap-4 p-3 bg-white/5 rounded-xl">
+                    <div className="w-8 h-8 bg-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold">3</div>
+                    <div>
+                      <div className="text-white text-sm font-medium">Rigorous Vetting</div>
+                      <div className="text-blue-200 text-xs">Technical & cultural fit</div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-4 p-3 bg-white/5 rounded-xl">
+                    <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-bold">4</div>
+                    <div>
+                      <div className="text-white text-sm font-medium">Final Selection</div>
+                      <div className="text-blue-200 text-xs">Present top candidates</div>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              {/* Floating elements */}
-              <div className="absolute -top-4 -right-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl p-4 shadow-lg">
+              {/* Floating success metrics */}
+              <div className="absolute -top-4 -right-4 bg-gradient-to-r from-green-500 to-teal-500 rounded-2xl p-4 shadow-lg">
                 <div className="text-white text-center">
-                  <div className="text-2xl font-bold">500+</div>
-                  <div className="text-xs">Available Now</div>
+                  <div className="text-2xl font-bold">98%</div>
+                  <div className="text-xs">Success Rate</div>
                 </div>
               </div>
 
-              <div className="absolute -bottom-4 -left-4 bg-gradient-to-r from-green-500 to-teal-500 rounded-2xl p-4 shadow-lg">
+              <div className="absolute -bottom-4 -left-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl p-4 shadow-lg">
                 <div className="text-white text-center">
-                  <div className="text-2xl font-bold">48H</div>
+                  <div className="text-2xl font-bold">2-3W</div>
                   <div className="text-xs">Avg. Hire Time</div>
                 </div>
               </div>
