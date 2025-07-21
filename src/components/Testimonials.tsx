@@ -1,34 +1,66 @@
 import React, { useState, useEffect } from 'react';
-import { Quote, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Quote, ChevronLeft, ChevronRight, Star, Award, TrendingUp } from 'lucide-react';
 
 const Testimonials = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const testimonials = [
     {
-      text: "These folks don't just find candidates - they find game-changers. Our new AI engineer didn't just fill the role, she revolutionized our entire approach to machine learning.",
-      author: "David Chen",
+      text: "StaffAugment didn't just find us a developer - they found us a game-changer. Our new full-stack engineer revolutionized our entire development process and became our tech lead within 6 months.",
+      author: "Sarah Johnson",
       role: "CTO at TechFlow Solutions",
-      avatar: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop&crop=face"
+      company: "TechFlow",
+      avatar: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop&crop=face",
+      rating: 5,
+      metric: "40% faster delivery",
+      industry: "SaaS"
     },
     {
-      text: "After struggling with hiring for months, they delivered three exceptional candidates in just 10 days. The person we hired has become our top performer.",
-      author: "Maria Rodriguez",
-      role: "VP Operations at GrowthCorp",
-      avatar: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop&crop=face"
+      text: "After struggling with hiring for 8 months, they delivered three exceptional AI engineers in just 2 weeks. The person we hired became our top performer and is now leading our ML initiatives.",
+      author: "Marcus Chen",
+      role: "VP of Engineering at DataVision",
+      company: "DataVision",
+      avatar: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop&crop=face",
+      rating: 5,
+      metric: "60% cost reduction",
+      industry: "AI/ML"
     },
     {
-      text: "Finally, recruiters who actually understand our industry. They didn't just read our job description - they understood our vision and found someone who shares it.",
+      text: "Finally, recruiters who actually understand our startup culture. They didn't just read our job description - they understood our vision and found someone who shares our passion for innovation.",
       author: "Jennifer Park",
-      role: "Founder of DataBridge Analytics",
-      avatar: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop&crop=face"
+      role: "Founder & CEO at InnovateNow",
+      company: "InnovateNow",
+      avatar: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop&crop=face",
+      rating: 5,
+      metric: "Perfect culture fit",
+      industry: "Fintech"
     },
     {
-      text: "The cultural fit was perfect. It's like they hand-picked someone who was meant to be part of our team. Best hire we've ever made.",
-      author: "Michael Thompson",
-      role: "CEO at InnovateNow",
-      avatar: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop&crop=face"
+      text: "The quality of candidates was exceptional. We hired 3 developers and a UI/UX designer through them, and all four are still with us 2 years later. Outstanding retention rate.",
+      author: "Michael Rodriguez",
+      role: "Head of Product at GrowthCorp",
+      company: "GrowthCorp",
+      avatar: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop&crop=face",
+      rating: 5,
+      metric: "100% retention",
+      industry: "E-commerce"
+    },
+    {
+      text: "Their vetting process is incredible. Every candidate they sent was interview-ready and technically sound. We ended up hiring the first person they recommended and couldn't be happier.",
+      author: "Lisa Thompson",
+      role: "Senior Director at CloudTech",
+      company: "CloudTech",
+      avatar: "https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop&crop=face",
+      rating: 5,
+      metric: "First choice hire",
+      industry: "Cloud Solutions"
     }
+  ];
+
+  const stats = [
+    { icon: Award, value: '98%', label: 'Client Satisfaction' },
+    { icon: TrendingUp, value: '95%', label: 'Retention Rate' },
+    { icon: Star, value: '4.9/5', label: 'Average Rating' }
   ];
 
   const nextSlide = () => {
@@ -40,69 +72,116 @@ const Testimonials = () => {
   };
 
   useEffect(() => {
-    const timer = setInterval(nextSlide, 5000);
+    const timer = setInterval(nextSlide, 6000);
     return () => clearInterval(timer);
   }, []);
 
   return (
-    <section id="testimonials" className="py-20 relative overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop"
-          alt="Team collaboration background"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 via-blue-800/80 to-purple-900/90"></div>
+    <section id="testimonials" className="py-24 relative overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
+      {/* Animated background patterns */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-600 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-600 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-pulse delay-1000"></div>
+        <div className="absolute top-3/4 left-1/2 w-72 h-72 bg-cyan-600 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-pulse delay-500"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 relative z-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            What Our Clients Say
+      {/* Grid pattern */}
+      <div className={"absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"0.02\"%3E%3Ccircle cx=\"30\" cy=\"30\" r=\"1\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-50"}></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100/10 text-blue-300 text-sm font-medium mb-6 backdrop-blur-sm">
+            <Star className="w-4 h-4 mr-2" />
+            Client Success Stories
+          </div>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+            Trusted by Industry
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
+              Leaders Worldwide
+            </span>
           </h2>
-          <p className="text-xl text-blue-200">
-            Real feedback from companies that have transformed their teams with us
+          <p className="text-xl text-blue-200 max-w-3xl mx-auto leading-relaxed">
+            Discover how companies have transformed their teams and accelerated growth with our elite remote talent
           </p>
         </div>
+
+        {/* Stats */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          {stats.map((stat, index) => (
+            <div 
+              key={index}
+              className="text-center bg-white/5 backdrop-blur-lg rounded-2xl p-6 border border-white/10"
+            >
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-blue-600/20 mb-4">
+                <stat.icon className="w-6 h-6 text-blue-400" />
+              </div>
+              <div className="text-3xl font-bold text-white mb-2">{stat.value}</div>
+              <div className="text-blue-200 text-sm">{stat.label}</div>
+            </div>
+          ))}
+        </div>
         
-        <div className="relative z-10">
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 md:p-12 border border-white/20">
-              <Quote className="h-12 w-12 text-blue-300 mb-6 mx-auto" />
-              <p className="text-white leading-relaxed mb-8 text-xl italic text-center">
+        {/* Main Testimonial */}
+        <div className="relative">
+          <div className="max-w-5xl mx-auto">
+            <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 md:p-12 border border-white/20 shadow-2xl">
+              {/* Quote icon and rating */}
+              <div className="flex items-center justify-between mb-8">
+                <Quote className="h-12 w-12 text-blue-300" />
+                <div className="flex items-center gap-1">
+                  {[...Array(testimonials[currentSlide].rating)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                  ))}
+                </div>
+              </div>
+              
+              {/* Testimonial text */}
+              <p className="text-white leading-relaxed mb-8 text-xl lg:text-2xl italic">
                 "{testimonials[currentSlide].text}"
               </p>
-              <div className="flex items-center justify-center">
-                <img
-                  src={testimonials[currentSlide].avatar}
-                  alt={testimonials[currentSlide].author}
-                  className="w-12 h-12 rounded-full mr-4 object-cover"
-                />
-                <div className="text-center">
-                  <div className="font-bold text-white">{testimonials[currentSlide].author}</div>
-                  <div className="text-blue-200 text-sm">{testimonials[currentSlide].role}</div>
+              
+              {/* Author info and metrics */}
+              <div className="flex flex-col md:flex-row items-center justify-between">
+                <div className="flex items-center mb-4 md:mb-0">
+                  <img
+                    src={testimonials[currentSlide].avatar}
+                    alt={testimonials[currentSlide].author}
+                    className="w-16 h-16 rounded-full mr-4 object-cover border-2 border-white/20"
+                  />
+                  <div>
+                    <div className="font-bold text-white text-lg">{testimonials[currentSlide].author}</div>
+                    <div className="text-blue-200">{testimonials[currentSlide].role}</div>
+                    <div className="text-blue-300 text-sm">{testimonials[currentSlide].company} • {testimonials[currentSlide].industry}</div>
+                  </div>
+                </div>
+                
+                <div className="bg-blue-600/20 rounded-xl px-4 py-2">
+                  <div className="text-white font-semibold">{testimonials[currentSlide].metric}</div>
+                  <div className="text-blue-200 text-sm">Key Result</div>
                 </div>
               </div>
             </div>
           </div>
           
           {/* Navigation */}
-          <div className="flex items-center justify-center mt-8 space-x-4">
+          <div className="flex items-center justify-center mt-8 space-x-6">
             <button
               onClick={prevSlide}
-              className="p-3 rounded-full bg-white/20 hover:bg-white/30 transition-all duration-300 backdrop-blur-sm"
+              className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 backdrop-blur-sm border border-white/10 group"
             >
-              <ChevronLeft className="h-6 w-6 text-white" />
+              <ChevronLeft className="h-6 w-6 text-white group-hover:text-blue-300 transition-colors" />
             </button>
             
-            <div className="flex space-x-2">
+            <div className="flex space-x-3">
               {testimonials.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentSlide ? 'bg-white' : 'bg-white/40'
+                  className={`transition-all duration-300 rounded-full ${
+                    index === currentSlide 
+                      ? 'w-8 h-3 bg-blue-400' 
+                      : 'w-3 h-3 bg-white/30 hover:bg-white/50'
                   }`}
                 />
               ))}
@@ -110,11 +189,44 @@ const Testimonials = () => {
             
             <button
               onClick={nextSlide}
-              className="p-3 rounded-full bg-white/20 hover:bg-white/30 transition-all duration-300 backdrop-blur-sm"
+              className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 backdrop-blur-sm border border-white/10 group"
             >
-              <ChevronRight className="h-6 w-6 text-white" />
+              <ChevronRight className="h-6 w-6 text-white group-hover:text-blue-300 transition-colors" />
             </button>
           </div>
+        </div>
+
+        {/* Additional testimonials preview */}
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {testimonials.slice(0, 3).map((testimonial, index) => (
+            <div 
+              key={index}
+              className={`bg-white/5 backdrop-blur-lg rounded-2xl p-6 border border-white/10 transition-all duration-300 hover:bg-white/10 cursor-pointer ${
+                index === currentSlide ? 'ring-2 ring-blue-400' : ''
+              }`}
+              onClick={() => setCurrentSlide(index)}
+            >
+              <div className="flex items-center gap-1 mb-3">
+                {[...Array(testimonial.rating)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                ))}
+              </div>
+              <p className="text-white/80 text-sm leading-relaxed mb-4 line-clamp-3">
+                "{testimonial.text.slice(0, 120)}..."
+              </p>
+              <div className="flex items-center">
+                <img
+                  src={testimonial.avatar}
+                  alt={testimonial.author}
+                  className="w-8 h-8 rounded-full mr-3 object-cover"
+                />
+                <div>
+                  <div className="text-white text-sm font-medium">{testimonial.author}</div>
+                  <div className="text-blue-200 text-xs">{testimonial.company}</div>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
