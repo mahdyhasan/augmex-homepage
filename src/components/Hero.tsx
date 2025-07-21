@@ -11,7 +11,7 @@ const Hero = () => {
           alt="Professional team working together"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-blue-900/80"></div>
+                <div className="absolute inset-0" style={{backgroundColor: "rgba(53, 25, 226, 0.8)"}}></div>
       </div>
 
       {/* Content */}
@@ -27,7 +27,7 @@ const Hero = () => {
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
             <span className="text-white">Strategic Staff</span>
             <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300">
+                        <span className="text-transparent bg-clip-text" style={{backgroundImage: "linear-gradient(to right, #7C3AED, #06B6D4)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent"}}>
               Resource Augmentation
             </span>
           </h1>
@@ -39,7 +39,7 @@ const Hero = () => {
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 mb-16">
-            <button className="group bg-white text-blue-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-xl flex items-center justify-center">
+                        <button className="group bg-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-50 transition-all duration-300 transform hover:scale-105 shadow-xl flex items-center justify-center" style={{color: "#3519E2"}}>
               Get a Quote
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </button>
@@ -54,15 +54,15 @@ const Hero = () => {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-white">
             <div className="flex flex-col items-start">
               <div className="text-4xl font-bold mb-1">40-60%</div>
-              <div className="text-blue-200 text-sm">Cost Saving</div>
+                            <div className="text-purple-200 text-sm">Cost Saving</div>
             </div>
             <div className="flex flex-col items-start">
               <div className="text-4xl font-bold mb-1">7-14 Days</div>
-              <div className="text-blue-200 text-sm">Turnaround</div>
+                            <div className="text-purple-200 text-sm">Turnaround</div>
             </div>
             <div className="flex flex-col items-start">
               <div className="text-4xl font-bold mb-1">100%</div>
-              <div className="text-blue-200 text-sm">Transparent Pricing</div>
+                            <div className="text-purple-200 text-sm">Transparent Pricing</div>
             </div>
           </div>
         </div>
