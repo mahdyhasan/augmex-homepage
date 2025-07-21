@@ -1,114 +1,260 @@
-import React from 'react';
-import { useState } from 'react';
-import { Search, Users, CheckCircle, Handshake, HeadphonesIcon } from 'lucide-react';
+import React, { useState } from 'react';
+import { Search, Users, CheckCircle, Handshake, Clock, Target, Shield, Star, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const Process = () => {
-  const [activeTab, setActiveTab] = useState(0);
+  const [currentStep, setCurrentStep] = useState(0);
 
   const steps = [
     {
+      number: '01',
+      icon: Target,
+      title: 'Requirement Deep Dive',
+      description: 'We start with a comprehensive consultation to understand your exact needs, company culture, and project requirements.',
+      details: [
+        'Technical skills assessment',
+        'Cultural fit evaluation',
+        'Timeline and budget discussion',
+        'Success metrics definition'
+      ],
+      color: 'from-blue-500 to-blue-600',
+      bgColor: 'bg-blue-50',
+      timeline: '1-2 Days'
+    },
+    {
+      number: '02',
       icon: Search,
-      title: 'Deep Discovery',
-      description: 'We dive into your company culture, goals, and the specific challenges this role needs to solve. Because understanding your "why" helps us find your "who."',
-      image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop'
+      title: 'Strategic Talent Sourcing',
+      description: 'Our expert recruiters leverage global networks and advanced screening to identify top-tier candidates.',
+      details: [
+        'Global talent pool access',
+        'Multi-channel sourcing',
+        'Advanced skill matching',
+        'Industry expertise leverage'
+      ],
+      color: 'from-purple-500 to-purple-600',
+      bgColor: 'bg-purple-50',
+      timeline: '3-5 Days'
     },
     {
+      number: '03',
+      icon: Shield,
+      title: 'Rigorous Vetting Process',
+      description: 'Every candidate goes through our comprehensive 7-stage evaluation to ensure quality and fit.',
+      details: [
+        'Technical skill assessment',
+        'Communication evaluation',
+        'Cultural fit interview',
+        'Reference verification'
+      ],
+      color: 'from-green-500 to-green-600',
+      bgColor: 'bg-green-50',
+      timeline: '5-7 Days'
+    },
+    {
+      number: '04',
       icon: Users,
-      title: 'Talent Intelligence',
-      description: 'Using our extensive network and advanced sourcing techniques, we identify candidates who aren\'t just qualified - they\'re excited about your mission.',
-      image: 'https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop'
+      title: 'Candidate Presentation',
+      description: 'We present 2-3 pre-qualified candidates with detailed profiles and our recommendation.',
+      details: [
+        'Comprehensive candidate profiles',
+        'Skill match analysis',
+        'Interview scheduling',
+        'Decision support'
+      ],
+      color: 'from-orange-500 to-orange-600',
+      bgColor: 'bg-orange-50',
+      timeline: '2-3 Days'
     },
     {
-      icon: CheckCircle,
-      title: 'Rigorous Vetting',
-      description: 'Every candidate goes through our comprehensive evaluation process: skills assessment, cultural fit analysis, and reference verification.',
-      image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop'
-    },
-    {
+      number: '05',
       icon: Handshake,
-      title: 'Perfect Matchmaking',
-      description: 'We present you with candidates who are ready to contribute from day one, complete with insights on how they\'ll integrate with your team.',
-      image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop'
-    },
-    {
-      icon: HeadphonesIcon,
-      title: 'Ongoing Support',
-      description: 'We don\'t disappear after placement. We ensure successful integration and provide ongoing support to guarantee long-term success.',
-      image: 'https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop'
+      title: 'Seamless Integration',
+      description: 'We facilitate the hiring process and ensure smooth onboarding with ongoing support.',
+      details: [
+        'Contract negotiation',
+        'Onboarding facilitation',
+        '30-day check-ins',
+        'Performance monitoring'
+      ],
+      color: 'from-teal-500 to-teal-600',
+      bgColor: 'bg-teal-50',
+      timeline: '1-2 Days'
     }
   ];
 
+  const metrics = [
+    { icon: Clock, value: '2-3 Weeks', label: 'Total Process Time' },
+    { icon: Star, value: '98%', label: 'Success Rate' },
+    { icon: Users, value: '2-3', label: 'Candidates Presented' },
+    { icon: CheckCircle, value: '7 Stages', label: 'Vetting Process' }
+  ];
+
+  const nextStep = () => {
+    setCurrentStep((prev) => (prev + 1) % steps.length);
+  };
+
+  const prevStep = () => {
+    setCurrentStep((prev) => (prev - 1 + steps.length) % steps.length);
+  };
+
+  const currentStepData = steps[currentStep];
+  const IconComponent = currentStepData.icon;
+
   return (
-    <section id="process" className="py-20 bg-gradient-to-br from-blue-50 to-indigo-50">
+    <section id="process" className="py-16 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Our Proven Success Process
+        {/* Header */}
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-100 text-green-800 text-sm font-medium mb-4">
+            <CheckCircle className="w-4 h-4 mr-2" />
+            Proven Methodology
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Our Proven
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-blue-600">
+              Success Process
+            </span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            A systematic approach that consistently delivers exceptional results
+          <p className="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
+            A battle-tested approach that consistently delivers exceptional talent in record time.
           </p>
-        </div>
-        
-        <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
-          <div className="flex flex-col lg:flex-row">
-            {/* Tabs */}
-            <div className="lg:w-1/2 bg-gray-50">
-              <div className="p-8">
-                <div className="space-y-4">
-                  {steps.map((step, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setActiveTab(index)}
-                      className={`w-full text-left p-6 rounded-xl transition-all duration-300 ${
-                        activeTab === index
-                          ? 'bg-blue-600 text-white shadow-lg transform scale-105'
-                          : 'bg-white text-gray-700 hover:bg-blue-50 hover:text-blue-600'
-                      }`}
-                    >
-                      <div className="flex items-center">
-                        <div className={`w-12 h-12 rounded-full flex items-center justify-center mr-4 ${
-                          activeTab === index ? 'bg-white/20' : 'bg-blue-100'
-                        }`}>
-                          <step.icon className={`h-6 w-6 ${
-                            activeTab === index ? 'text-white' : 'text-blue-600'
-                          }`} />
-                        </div>
-                        <div>
-                          <h3 className="text-lg font-bold mb-1">
-                            {step.title}
-                          </h3>
-                          <div className={`text-sm ${
-                            activeTab === index ? 'text-blue-100' : 'text-gray-500'
-                          }`}>
-                            Step {index + 1}
-                          </div>
-                        </div>
-                      </div>
-                    </button>
-                  ))}
+          
+          {/* Key Metrics */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+            {metrics.map((metric, index) => {
+              const MetricIcon = metric.icon;
+              return (
+                <div key={index} className="text-center bg-white rounded-xl p-4 shadow-lg">
+                  <div className="inline-flex items-center justify-center w-10 h-10 bg-gradient-to-r from-green-500 to-blue-500 rounded-lg mb-3">
+                    <MetricIcon className="w-5 h-5 text-white" />
+                  </div>
+                  <div className="text-xl md:text-2xl font-bold text-gray-900 mb-1">{metric.value}</div>
+                  <div className="text-xs text-gray-600">{metric.label}</div>
                 </div>
-              </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Process Slider */}
+        <div className="relative bg-white rounded-3xl shadow-2xl p-8 border border-gray-100">
+          {/* Step Navigation */}
+          <div className="flex items-center justify-between mb-8">
+            <div className="flex items-center gap-4">
+              {steps.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentStep(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    index === currentStep 
+                      ? 'bg-blue-600 w-8' 
+                      : index < currentStep 
+                        ? 'bg-green-500'
+                        : 'bg-gray-300'
+                  }`}
+                />
+              ))}
             </div>
             
+            <div className="flex items-center gap-2">
+              <button
+                onClick={prevStep}
+                className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+              >
+                <ChevronLeft className="w-5 h-5 text-gray-600" />
+              </button>
+              <button
+                onClick={nextStep}
+                className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+              >
+                <ChevronRight className="w-5 h-5 text-gray-600" />
+              </button>
+            </div>
+          </div>
+
+          {/* Current Step Content */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             {/* Content */}
-            <div className="lg:w-1/2">
-              <div className="p-8 h-full flex flex-col justify-center">
-                <div className="mb-8">
-                  <img
-                    src={steps[activeTab].image}
-                    alt={steps[activeTab].title}
-                    className="w-full h-64 object-cover rounded-xl shadow-lg"
-                  />
+            <div>
+              <div className="flex items-center gap-4 mb-6">
+                <div className={`w-16 h-16 bg-gradient-to-r ${currentStepData.color} rounded-2xl flex items-center justify-center text-white`}>
+                  <IconComponent className="w-8 h-8" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  {steps[activeTab].title}
-                </h3>
-                <p className="text-gray-700 leading-relaxed text-lg">
-                  {steps[activeTab].description}
-                </p>
+                <div>
+                  <div className="text-sm font-medium text-gray-500 mb-1">Step {currentStepData.number}</div>
+                  <h3 className="text-2xl font-bold text-gray-900">{currentStepData.title}</h3>
+                </div>
+              </div>
+              
+              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                {currentStepData.description}
+              </p>
+              
+              <div className="space-y-3">
+                {currentStepData.details.map((detail, detailIndex) => (
+                  <div key={detailIndex} className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                    <span className="text-gray-700">{detail}</span>
+                  </div>
+                ))}
               </div>
             </div>
+
+            {/* Visual */}
+            <div className={`${currentStepData.bgColor} rounded-2xl p-6 border border-gray-100 relative overflow-hidden`}>
+              <div className="relative z-10">
+                <div className="flex items-center justify-between mb-6">
+                  <div className={`w-20 h-20 bg-gradient-to-r ${currentStepData.color} rounded-2xl flex items-center justify-center text-white text-2xl font-bold`}>
+                    {currentStepData.number}
+                  </div>
+                  <div className="text-right">
+                    <div className="text-sm text-gray-500">Timeline</div>
+                    <div className="text-lg font-semibold text-gray-700">{currentStepData.timeline}</div>
+                  </div>
+                </div>
+                
+                <div className="bg-white/60 rounded-xl p-4">
+                  <h4 className="font-semibold text-gray-900 mb-3">{currentStepData.title}</h4>
+                  <div className="space-y-2">
+                    {currentStepData.details.slice(0, 2).map((detail, i) => (
+                      <div key={i} className="text-sm text-gray-600 flex items-center gap-2">
+                        <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
+                        {detail}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              
+              {/* Decorative elements */}
+              <div className={`absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-r ${currentStepData.color} rounded-full opacity-10`}></div>
+            </div>
+          </div>
+
+          {/* Step Progress */}
+          <div className="mt-8 text-center">
+            <p className="text-gray-600">
+              Step {currentStep + 1} of {steps.length} • 
+              <span className="font-medium text-gray-900 ml-1">
+                {currentStepData.timeline}
+              </span>
+            </p>
+          </div>
+        </div>
+
+        {/* Process Guarantee - Compact */}
+        <div className="mt-12">
+          <div className="bg-gradient-to-r from-green-600 to-blue-600 rounded-2xl p-8 text-white text-center">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-xl mb-4">
+              <Shield className="w-8 h-8 text-white" />
+            </div>
+            <h3 className="text-2xl md:text-3xl font-bold mb-4">Our Process Guarantee</h3>
+            <p className="text-lg text-green-100 mb-6 max-w-2xl mx-auto">
+              30-day replacement guarantee with 100% process transparency and zero hidden fees.
+            </p>
+            <button className="bg-white text-green-600 px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-colors duration-300 shadow-lg">
+              Start Your Process Today
+            </button>
           </div>
         </div>
       </div>
