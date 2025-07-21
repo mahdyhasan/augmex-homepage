@@ -2,11 +2,11 @@ import React from 'react';
 import { Code, Brain, BarChart3, Headphones, Shield, Zap, Globe, Users } from 'lucide-react';
 
 const Services = () => {
-  const services = [
+  const industries = [
     {
       icon: Code,
-      title: 'Full-Stack Developers',
-      description: 'Expert developers proficient in modern frameworks and technologies to build scalable applications',
+      title: 'Full-Stack Development',
+      description: 'Custom web and mobile applications with modern frameworks and scalable architectures',
       skills: ['React', 'Node.js', 'Python', 'TypeScript'],
       gradient: 'from-blue-600 to-blue-800',
       hoverGradient: 'from-blue-700 to-blue-900',
@@ -14,8 +14,8 @@ const Services = () => {
     },
     {
       icon: Brain,
-      title: 'AI/ML Engineers',
-      description: 'Advanced machine learning specialists creating intelligent solutions that drive innovation',
+      title: 'AI & Machine Learning',
+      description: 'Intelligent solutions leveraging artificial intelligence and advanced data science',
       skills: ['TensorFlow', 'PyTorch', 'NLP', 'Computer Vision'],
       gradient: 'from-purple-600 to-purple-800',
       hoverGradient: 'from-purple-700 to-purple-900',
@@ -23,8 +23,8 @@ const Services = () => {
     },
     {
       icon: BarChart3,
-      title: 'Data Scientists',
-      description: 'Transform complex data into actionable insights with advanced analytics and visualization',
+      title: 'Data Science & Analytics',
+      description: 'Transform complex data into actionable business insights and strategic decisions',
       skills: ['Python', 'R', 'SQL', 'Tableau'],
       gradient: 'from-green-600 to-green-800',
       hoverGradient: 'from-green-700 to-green-900',
@@ -32,8 +32,8 @@ const Services = () => {
     },
     {
       icon: Headphones,
-      title: 'Customer Success',
-      description: 'Dedicated support professionals who ensure exceptional customer experiences and retention',
+      title: 'Customer Success & Sales',
+      description: 'Building lasting customer relationships and driving sustainable business growth',
       skills: ['CRM', 'Support', 'Training', 'Analytics'],
       gradient: 'from-orange-600 to-orange-800',
       hoverGradient: 'from-orange-700 to-orange-900',
@@ -41,8 +41,8 @@ const Services = () => {
     },
     {
       icon: Shield,
-      title: 'DevOps Engineers',
-      description: 'Infrastructure experts ensuring reliable, secure, and scalable deployment pipelines',
+      title: 'DevOps & Infrastructure',
+      description: 'Scalable cloud infrastructure and automated deployment pipelines',
       skills: ['AWS', 'Docker', 'Kubernetes', 'CI/CD'],
       gradient: 'from-red-600 to-red-800',
       hoverGradient: 'from-red-700 to-red-900',
@@ -50,8 +50,8 @@ const Services = () => {
     },
     {
       icon: Globe,
-      title: 'UI/UX Designers',
-      description: 'Creative professionals crafting intuitive and beautiful user experiences that convert',
+      title: 'UI/UX Design',
+      description: 'User-centered design that creates memorable experiences and drives conversions',
       skills: ['Figma', 'Sketch', 'Prototyping', 'User Research'],
       gradient: 'from-pink-600 to-pink-800',
       hoverGradient: 'from-pink-700 to-pink-900',
@@ -59,8 +59,8 @@ const Services = () => {
     },
     {
       icon: Zap,
-      title: 'QA Engineers',
-      description: 'Quality assurance specialists ensuring robust, bug-free software delivery',
+      title: 'Quality Assurance',
+      description: 'Comprehensive testing strategies ensuring robust, reliable software delivery',
       skills: ['Automation', 'Manual Testing', 'Performance', 'Security'],
       gradient: 'from-yellow-600 to-yellow-800',
       hoverGradient: 'from-yellow-700 to-yellow-900',
@@ -68,8 +68,8 @@ const Services = () => {
     },
     {
       icon: Users,
-      title: 'Project Managers',
-      description: 'Experienced leaders ensuring projects are delivered on time, within scope and budget',
+      title: 'Project Management',
+      description: 'Strategic project leadership ensuring on-time, on-budget successful delivery',
       skills: ['Agile', 'Scrum', 'Leadership', 'Strategy'],
       gradient: 'from-teal-600 to-teal-800',
       hoverGradient: 'from-teal-700 to-teal-900',
@@ -78,10 +78,10 @@ const Services = () => {
   ];
 
   const stats = [
-    { label: 'Active Professionals', value: '2,500+' },
-    { label: 'Successful Projects', value: '10,000+' },
+    { label: 'Successful Hires', value: '1,200+' },
+    { label: 'Industries Served', value: '15+' },
     { label: 'Client Retention', value: '98%' },
-    { label: 'Avg. Time to Hire', value: '48 Hours' }
+    { label: 'Avg. Hiring Time', value: '2-3 Weeks' }
   ];
 
   return (
@@ -91,16 +91,16 @@ const Services = () => {
         <div className="text-center mb-20">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-800 text-sm font-medium mb-6">
             <Zap className="w-4 h-4 mr-2" />
-            Elite Talent Pool
+            Industries We Excel In
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-            World-Class
+            We Source & Hire
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-              Remote Professionals
+              For Every Industry
             </span>
           </h2>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Access pre-vetted talent across all major disciplines. Our rigorous screening process ensures you get the top 1% of professionals.
+            From startups to Fortune 500 companies, we understand the unique talent requirements across industries and deliver custom hiring solutions.
           </p>
           
           {/* Stats */}
@@ -114,40 +114,40 @@ const Services = () => {
           </div>
         </div>
         
-        {/* Services Grid */}
+        {/* Industries Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {services.map((service, index) => (
+          {industries.map((industry, index) => (
             <div 
               key={index}
               className="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border border-gray-100 overflow-hidden"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Background Pattern */}
-              <div className={`absolute inset-0 ${service.bgPattern} opacity-0 group-hover:opacity-20 transition-opacity duration-500`}></div>
+              <div className={`absolute inset-0 ${industry.bgPattern} opacity-0 group-hover:opacity-20 transition-opacity duration-500`}></div>
               
               {/* Content */}
               <div className="relative z-10">
                 {/* Icon */}
-                <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-r ${service.gradient} group-hover:${service.hoverGradient} mb-6 text-white transition-all duration-300 group-hover:scale-110 group-hover:rotate-3`}>
-                  <service.icon className="h-8 w-8" />
+                <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-r ${industry.gradient} group-hover:${industry.hoverGradient} mb-6 text-white transition-all duration-300 group-hover:scale-110 group-hover:rotate-3`}>
+                  <industry.icon className="h-8 w-8" />
                 </div>
                 
                 {/* Title */}
                 <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-gray-800 transition-colors">
-                  {service.title}
+                  {industry.title}
                 </h3>
                 
                 {/* Description */}
                 <p className="text-gray-600 leading-relaxed mb-6 text-sm">
-                  {service.description}
+                  {industry.description}
                 </p>
                 
                 {/* Skills */}
                 <div className="flex flex-wrap gap-2">
-                  {service.skills.map((skill, skillIndex) => (
+                  {industry.skills.map((skill, skillIndex) => (
                     <span 
                       key={skillIndex}
-                      className={`px-3 py-1 text-xs font-medium rounded-full bg-gradient-to-r ${service.gradient} text-white opacity-80 group-hover:opacity-100 transition-opacity`}
+                      className={`px-3 py-1 text-xs font-medium rounded-full bg-gradient-to-r ${industry.gradient} text-white opacity-80 group-hover:opacity-100 transition-opacity`}
                     >
                       {skill}
                     </span>
@@ -156,7 +156,7 @@ const Services = () => {
               </div>
               
               {/* Hover gradient overlay */}
-              <div className={`absolute inset-0 bg-gradient-to-r ${service.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
+              <div className={`absolute inset-0 bg-gradient-to-r ${industry.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
               
               {/* Decorative elements */}
               <div className="absolute top-4 right-4 w-8 h-8 bg-white/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -169,13 +169,13 @@ const Services = () => {
         <div className="mt-20 text-center">
           <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-12 text-white">
             <h3 className="text-3xl md:text-4xl font-bold mb-4">
-              Ready to Build Your Dream Team?
+              Ready to Find Your Perfect Hire?
             </h3>
             <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-              Get matched with pre-vetted professionals in 48 hours or less. No lengthy hiring processes, no compromises on quality.
+              Tell us your requirements and we'll source, vet, and deliver the ideal candidate for your specific needs.
             </p>
             <button className="bg-white text-blue-600 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
-              Start Hiring Today
+              Share Your Requirements
             </button>
           </div>
         </div>
