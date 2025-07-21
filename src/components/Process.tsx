@@ -1,7 +1,9 @@
-import React from 'react';
-import { Search, Users, CheckCircle, Handshake, Clock, Target, Shield, Star } from 'lucide-react';
+import React, { useState } from 'react';
+import { Search, Users, CheckCircle, Handshake, Clock, Target, Shield, Star, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const Process = () => {
+  const [currentStep, setCurrentStep] = useState(0);
+
   const steps = [
     {
       number: '01',
@@ -15,7 +17,8 @@ const Process = () => {
         'Success metrics definition'
       ],
       color: 'from-blue-500 to-blue-600',
-      bgColor: 'bg-blue-50'
+      bgColor: 'bg-blue-50',
+      timeline: '1-2 Days'
     },
     {
       number: '02',
@@ -29,7 +32,8 @@ const Process = () => {
         'Industry expertise leverage'
       ],
       color: 'from-purple-500 to-purple-600',
-      bgColor: 'bg-purple-50'
+      bgColor: 'bg-purple-50',
+      timeline: '3-5 Days'
     },
     {
       number: '03',
@@ -43,7 +47,8 @@ const Process = () => {
         'Reference verification'
       ],
       color: 'from-green-500 to-green-600',
-      bgColor: 'bg-green-50'
+      bgColor: 'bg-green-50',
+      timeline: '5-7 Days'
     },
     {
       number: '04',
@@ -57,7 +62,8 @@ const Process = () => {
         'Decision support'
       ],
       color: 'from-orange-500 to-orange-600',
-      bgColor: 'bg-orange-50'
+      bgColor: 'bg-orange-50',
+      timeline: '2-3 Days'
     },
     {
       number: '05',
@@ -71,182 +77,178 @@ const Process = () => {
         'Performance monitoring'
       ],
       color: 'from-teal-500 to-teal-600',
-      bgColor: 'bg-teal-50'
+      bgColor: 'bg-teal-50',
+      timeline: '1-2 Days'
     }
   ];
 
   const metrics = [
-    {
-      icon: Clock,
-      value: '2-3 Weeks',
-      label: 'Average Process Time',
-      description: 'From requirement to hire'
-    },
-    {
-      icon: Star,
-      value: '98%',
-      label: 'Success Rate',
-      description: 'Successful long-term placements'
-    },
-    {
-      icon: Users,
-      value: '2-3',
-      label: 'Candidates Presented',
-      description: 'Quality over quantity'
-    },
-    {
-      icon: CheckCircle,
-      value: '7 Stages',
-      label: 'Vetting Process',
-      description: 'Comprehensive evaluation'
-    }
+    { icon: Clock, value: '2-3 Weeks', label: 'Total Process Time' },
+    { icon: Star, value: '98%', label: 'Success Rate' },
+    { icon: Users, value: '2-3', label: 'Candidates Presented' },
+    { icon: CheckCircle, value: '7 Stages', label: 'Vetting Process' }
   ];
 
+  const nextStep = () => {
+    setCurrentStep((prev) => (prev + 1) % steps.length);
+  };
+
+  const prevStep = () => {
+    setCurrentStep((prev) => (prev - 1 + steps.length) % steps.length);
+  };
+
   return (
-    <section id="process" className="py-24 bg-gradient-to-b from-gray-50 to-white">
+    <section id="process" className="py-16 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-20">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-100 text-green-800 text-sm font-medium mb-6">
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-100 text-green-800 text-sm font-medium mb-4">
             <CheckCircle className="w-4 h-4 mr-2" />
             Proven Methodology
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Our Proven
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-blue-600">
               Success Process
             </span>
           </h2>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-            A battle-tested approach that consistently delivers exceptional talent in record time. No guesswork, just results.
+          <p className="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
+            A battle-tested approach that consistently delivers exceptional talent in record time.
           </p>
           
           {/* Key Metrics */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
             {metrics.map((metric, index) => (
-              <div key={index} className="text-center bg-white rounded-2xl p-6 shadow-lg">
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r from-green-500 to-blue-500 rounded-xl mb-4">
-                  <metric.icon className="w-6 h-6 text-white" />
+              <div key={index} className="text-center bg-white rounded-xl p-4 shadow-lg">
+                <div className="inline-flex items-center justify-center w-10 h-10 bg-gradient-to-r from-green-500 to-blue-500 rounded-lg mb-3">
+                  <metric.icon className="w-5 h-5 text-white" />
                 </div>
-                <div className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">{metric.value}</div>
-                <div className="text-sm font-medium text-gray-700 mb-1">{metric.label}</div>
-                <div className="text-xs text-gray-500">{metric.description}</div>
+                <div className="text-xl md:text-2xl font-bold text-gray-900 mb-1">{metric.value}</div>
+                <div className="text-xs text-gray-600">{metric.label}</div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Process Steps */}
-        <div className="space-y-12">
-          {steps.map((step, index) => (
-            <div 
-              key={index}
-              className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
-                index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
-              }`}
-            >
-              {/* Content */}
-              <div className={`${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
-                <div className="flex items-center gap-4 mb-6">
-                  <div className={`w-16 h-16 bg-gradient-to-r ${step.color} rounded-2xl flex items-center justify-center text-white`}>
-                    <step.icon className="w-8 h-8" />
-                  </div>
-                  <div>
-                    <div className="text-sm font-medium text-gray-500 mb-1">Step {step.number}</div>
-                    <h3 className="text-2xl font-bold text-gray-900">{step.title}</h3>
-                  </div>
-                </div>
-                
-                <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                  {step.description}
-                </p>
-                
-                <div className="space-y-3">
-                  {step.details.map((detail, detailIndex) => (
-                    <div key={detailIndex} className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                      <span className="text-gray-700">{detail}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Visual */}
-              <div className={`${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
-                <div className={`${step.bgColor} rounded-3xl p-8 border border-gray-100 relative overflow-hidden`}>
-                  <div className="relative z-10">
-                    <div className="flex items-center justify-between mb-6">
-                      <div className={`w-20 h-20 bg-gradient-to-r ${step.color} rounded-3xl flex items-center justify-center text-white text-2xl font-bold`}>
-                        {step.number}
-                      </div>
-                      <div className="text-right">
-                        <div className="text-sm text-gray-500">Timeline</div>
-                        <div className="text-lg font-semibold text-gray-700">
-                          {index === 0 ? '1-2 Days' : 
-                           index === 1 ? '3-5 Days' :
-                           index === 2 ? '5-7 Days' :
-                           index === 3 ? '2-3 Days' : '1-2 Days'}
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="bg-white/60 rounded-2xl p-6">
-                      <h4 className="font-semibold text-gray-900 mb-3">{step.title}</h4>
-                      <div className="space-y-2">
-                        {step.details.slice(0, 2).map((detail, i) => (
-                          <div key={i} className="text-sm text-gray-600 flex items-center gap-2">
-                            <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
-                            {detail}
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                  
-                  {/* Decorative elements */}
-                  <div className={`absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-r ${step.color} rounded-full opacity-10`}></div>
-                  <div className={`absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-r ${step.color} rounded-full opacity-5`}></div>
-                </div>
-              </div>
+        {/* Process Slider */}
+        <div className="relative bg-white rounded-3xl shadow-2xl p-8 border border-gray-100">
+          {/* Step Navigation */}
+          <div className="flex items-center justify-between mb-8">
+            <div className="flex items-center gap-4">
+              {steps.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentStep(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    index === currentStep 
+                      ? 'bg-blue-600 w-8' 
+                      : index < currentStep 
+                        ? 'bg-green-500'
+                        : 'bg-gray-300'
+                  }`}
+                />
+              ))}
             </div>
-          ))}
-        </div>
-
-        {/* Process Guarantee */}
-        <div className="mt-20">
-          <div className="bg-gradient-to-r from-green-600 to-blue-600 rounded-3xl p-12 text-white text-center relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-r from-green-600/20 to-blue-600/20"></div>
-            <div className="relative z-10">
-              <div className="inline-flex items-center justify-center w-20 h-20 bg-white/20 rounded-2xl mb-6">
-                <Shield className="w-10 h-10 text-white" />
-              </div>
-              <h3 className="text-3xl md:text-4xl font-bold mb-6">
-                Our Process Guarantee
-              </h3>
-              <p className="text-xl text-green-100 mb-8 max-w-3xl mx-auto leading-relaxed">
-                If you're not completely satisfied with our process or the candidates we present, 
-                we'll refund your investment and find you a replacement at no additional cost.
-              </p>
-              
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-                <div className="bg-white/10 rounded-2xl p-6">
-                  <div className="text-2xl font-bold mb-2">30-Day</div>
-                  <div className="text-green-200">Replacement Guarantee</div>
-                </div>
-                <div className="bg-white/10 rounded-2xl p-6">
-                  <div className="text-2xl font-bold mb-2">100%</div>
-                  <div className="text-blue-200">Process Transparency</div>
-                </div>
-                <div className="bg-white/10 rounded-2xl p-6">
-                  <div className="text-2xl font-bold mb-2">Zero</div>
-                  <div className="text-teal-200">Hidden Fees</div>
-                </div>
-              </div>
-
-              <button className="bg-white text-green-600 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
-                Start Your Process Today
+            
+            <div className="flex items-center gap-2">
+              <button
+                onClick={prevStep}
+                className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+              >
+                <ChevronLeft className="w-5 h-5 text-gray-600" />
+              </button>
+              <button
+                onClick={nextStep}
+                className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+              >
+                <ChevronRight className="w-5 h-5 text-gray-600" />
               </button>
             </div>
+          </div>
+
+          {/* Current Step Content */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            {/* Content */}
+            <div>
+              <div className="flex items-center gap-4 mb-6">
+                <div className={`w-16 h-16 bg-gradient-to-r ${steps[currentStep].color} rounded-2xl flex items-center justify-center text-white`}>
+                  <steps[currentStep].icon className="w-8 h-8" />
+                </div>
+                <div>
+                  <div className="text-sm font-medium text-gray-500 mb-1">Step {steps[currentStep].number}</div>
+                  <h3 className="text-2xl font-bold text-gray-900">{steps[currentStep].title}</h3>
+                </div>
+              </div>
+              
+              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                {steps[currentStep].description}
+              </p>
+              
+              <div className="space-y-3">
+                {steps[currentStep].details.map((detail, detailIndex) => (
+                  <div key={detailIndex} className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                    <span className="text-gray-700">{detail}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Visual */}
+            <div className={`${steps[currentStep].bgColor} rounded-2xl p-6 border border-gray-100 relative overflow-hidden`}>
+              <div className="relative z-10">
+                <div className="flex items-center justify-between mb-6">
+                  <div className={`w-20 h-20 bg-gradient-to-r ${steps[currentStep].color} rounded-2xl flex items-center justify-center text-white text-2xl font-bold`}>
+                    {steps[currentStep].number}
+                  </div>
+                  <div className="text-right">
+                    <div className="text-sm text-gray-500">Timeline</div>
+                    <div className="text-lg font-semibold text-gray-700">{steps[currentStep].timeline}</div>
+                  </div>
+                </div>
+                
+                <div className="bg-white/60 rounded-xl p-4">
+                  <h4 className="font-semibold text-gray-900 mb-3">{steps[currentStep].title}</h4>
+                  <div className="space-y-2">
+                    {steps[currentStep].details.slice(0, 2).map((detail, i) => (
+                      <div key={i} className="text-sm text-gray-600 flex items-center gap-2">
+                        <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
+                        {detail}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              
+              {/* Decorative elements */}
+              <div className={`absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-r ${steps[currentStep].color} rounded-full opacity-10`}></div>
+            </div>
+          </div>
+
+          {/* Step Progress */}
+          <div className="mt-8 text-center">
+            <p className="text-gray-600">
+              Step {currentStep + 1} of {steps.length} • 
+              <span className="font-medium text-gray-900 ml-1">
+                {steps[currentStep].timeline}
+              </span>
+            </p>
+          </div>
+        </div>
+
+        {/* Process Guarantee - Compact */}
+        <div className="mt-12">
+          <div className="bg-gradient-to-r from-green-600 to-blue-600 rounded-2xl p-8 text-white text-center">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-xl mb-4">
+              <Shield className="w-8 h-8 text-white" />
+            </div>
+            <h3 className="text-2xl md:text-3xl font-bold mb-4">Our Process Guarantee</h3>
+            <p className="text-lg text-green-100 mb-6 max-w-2xl mx-auto">
+              30-day replacement guarantee with 100% process transparency and zero hidden fees.
+            </p>
+            <button className="bg-white text-green-600 px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-colors duration-300 shadow-lg">
+              Start Your Process Today
+            </button>
           </div>
         </div>
       </div>
