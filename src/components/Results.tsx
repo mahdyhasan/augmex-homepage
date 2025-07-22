@@ -212,36 +212,7 @@ const Results = () => {
           </div>
         </div>
 
-        {/* Rotating Testimonials with Visual Impact */}
-        <div className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 rounded-3xl p-8 text-white relative overflow-hidden">
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-10 right-10 w-32 h-32 bg-purple-500 rounded-full blur-2xl"></div>
-            <div className="absolute bottom-10 left-10 w-40 h-40 bg-blue-500 rounded-full blur-2xl"></div>
-          </div>
-          
-          <div className="relative z-10 text-center max-w-4xl mx-auto">
-            <h3 className="text-2xl md:text-3xl font-bold mb-8">What Our Clients Say</h3>
-            
-            <div className="mb-8">
-              <div className="text-xl md:text-2xl font-light leading-relaxed mb-6 italic">
-                "{testimonialRotation[selectedMetric % testimonialRotation.length].quote}"
-              </div>
-              <div className="text-gray-300">
-                — {testimonialRotation[selectedMetric % testimonialRotation.length].author}
-              </div>
-              <div className="inline-block mt-2 px-4 py-2 bg-white/10 rounded-full text-sm font-semibold">
-                {testimonialRotation[selectedMetric % testimonialRotation.length].metric}
-              </div>
-            </div>
-            
-            <button 
-              className="inline-flex items-center px-8 py-4 bg-white text-gray-900 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg"
-            >
-              See More Success Stories
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </button>
-          </div>
-        </div>
+
       </div>
     </section>
   );
