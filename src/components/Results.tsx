@@ -1,76 +1,154 @@
 import React from 'react';
-import { Trophy, Users, Clock, TrendingUp } from 'lucide-react';
+import { Trophy, ArrowRight, CheckCircle, X } from 'lucide-react';
 
 const Results = () => {
-  const achievements = [
+  const beforeAfter = [
     {
-      icon: Trophy,
-      title: 'Upgraded Capability',
-      description: 'Transform your team\'s potential with top-tier talent'
+      category: 'Hiring Time',
+      before: '6+ months',
+      after: '2-3 weeks',
+      improvement: '85% faster'
     },
     {
-      icon: Users,
-      title: 'Multiple Options',
-      description: 'Choose from carefully vetted exceptional candidates'
+      category: 'Success Rate',
+      before: '30% fit',
+      after: '98% fit',
+      improvement: '225% better'
     },
     {
-      icon: Clock,
-      title: 'Streamlined Process',
-      description: 'Efficient recruitment without compromising quality'
+      category: 'Total Cost',
+      before: '$50K+ per hire',
+      after: '$15K per hire',
+      improvement: '70% savings'
     },
     {
-      icon: TrendingUp,
-      title: 'Proven Results',
-      description: 'Consistent success across diverse industries'
+      category: 'Quality Score',
+      before: '6/10 average',
+      after: '9.5/10 average',
+      improvement: '58% higher'
     }
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="order-2 lg:order-1">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              The Results Speak for Themselves
-            </h2>
+        {/* Header */}
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center px-6 py-3 rounded-full bg-gray-100 text-gray-700 text-sm font-medium mb-8">
+            <Trophy className="w-4 h-4 mr-2" />
+            Proven Results
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            The Results Speak for Themselves
+          </h2>
+        </div>
+
+        {/* Main Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
+          {/* Left: Content */}
+          <div className="bg-white rounded-3xl p-10 border border-gray-200">
+            <h3 className="text-2xl font-semibold text-gray-900 mb-8">
+              The Transformation Our Clients Experience
+            </h3>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-              {achievements.map((achievement, index) => (
-                <div key={index} className="bg-gradient-to-br from-green-50 to-teal-50 rounded-xl p-6 border border-green-100">
-                  <div className="inline-flex items-center justify-center w-12 h-12 bg-green-100 rounded-full mb-4">
-                    <achievement.icon className="h-6 w-6 text-green-600" />
-                  </div>
-                  <h3 className="font-bold text-gray-900 mb-2">{achievement.title}</h3>
-                  <p className="text-gray-700 text-sm">{achievement.description}</p>
-                </div>
-              ))}
-            </div>
-            
-            <div className="space-y-6">
-              <p className="text-gray-800 leading-relaxed text-lg">
+            <div className="space-y-6 text-gray-600 leading-relaxed">
+              <p className="text-lg">
                 Our clients don't just hire - they upgrade their entire capability. They go from struggling to find decent candidates to choosing between multiple exceptional options. From lengthy hiring processes to efficient, streamlined recruitment.
               </p>
-              <p className="text-gray-800 leading-relaxed text-lg">
+              
+              <p className="text-lg">
                 What's the difference? We treat every placement like our reputation depends on it. Because it does.
               </p>
-              <div className="bg-green-50 rounded-xl p-6 border-l-4 border-green-500">
-                <p className="text-gray-800 font-medium text-lg">
+              
+              <div className="bg-gray-50 rounded-2xl p-6 border-l-4" style={{borderLeftColor: '#3519E2'}}>
+                <p className="text-lg font-medium text-gray-900">
                   When your new hire becomes your star performer, that's when we know we've done our job right.
                 </p>
               </div>
             </div>
           </div>
-          
-          <div className="order-1 lg:order-2">
-            <div className="relative">
-              <img
-                src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
-                alt="Success results"
-                className="rounded-2xl shadow-2xl w-full h-[500px] object-cover"
-              />
-              <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-green-500 rounded-full opacity-20"></div>
-              <div className="absolute -top-6 -right-6 w-32 h-32 bg-teal-500 rounded-full opacity-10"></div>
+
+          {/* Right: Visual Element */}
+          <div className="bg-white rounded-3xl p-10 border border-gray-200">
+            <div className="text-center">
+              <div className="w-20 h-20 rounded-3xl flex items-center justify-center mx-auto mb-8" style={{backgroundColor: '#3519E215'}}>
+                <Trophy className="w-10 h-10" style={{color: '#3519E2'}} />
+              </div>
+              
+              <h4 className="text-xl font-semibold text-gray-900 mb-6">
+                From Hiring Struggles to Success Stories
+              </h4>
+              
+              <div className="space-y-4">
+                <div className="bg-red-50 rounded-xl p-4 border border-red-100">
+                  <div className="flex items-center justify-center gap-2 mb-2">
+                    <X className="w-4 h-4 text-red-500" />
+                    <span className="text-sm font-medium text-red-700">Before</span>
+                  </div>
+                  <p className="text-red-700 font-medium">Struggling with hiring</p>
+                </div>
+                
+                <div className="flex justify-center">
+                  <ArrowRight className="w-6 h-6 text-gray-400" />
+                </div>
+                
+                <div className="bg-green-50 rounded-xl p-4 border border-green-100">
+                  <div className="flex items-center justify-center gap-2 mb-2">
+                    <CheckCircle className="w-4 h-4 text-green-500" />
+                    <span className="text-sm font-medium text-green-700">After</span>
+                  </div>
+                  <p className="text-green-700 font-medium">Hiring star performers</p>
+                </div>
+              </div>
             </div>
+          </div>
+        </div>
+
+        {/* Before vs After Comparison */}
+        <div className="bg-white rounded-3xl p-10 border border-gray-200">
+          <div className="text-center mb-12">
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+              Before vs After StaffAugment
+            </h3>
+            <p className="text-lg text-gray-600">
+              See the dramatic transformation in hiring outcomes
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {beforeAfter.map((comparison, index) => (
+              <div key={index} className="text-center">
+                <h4 className="font-semibold text-gray-900 mb-6 text-lg">{comparison.category}</h4>
+                
+                {/* Before */}
+                <div className="bg-red-50 rounded-xl p-4 mb-4 border border-red-100">
+                  <div className="flex items-center justify-center gap-2 mb-3">
+                    <X className="w-4 h-4 text-red-500" />
+                    <span className="text-xs text-red-600 font-medium uppercase tracking-wide">Before</span>
+                  </div>
+                  <div className="text-red-700 font-semibold">{comparison.before}</div>
+                </div>
+                
+                {/* Arrow */}
+                <div className="flex justify-center mb-4">
+                  <ArrowRight className="w-5 h-5 text-gray-400" />
+                </div>
+                
+                {/* After */}
+                <div className="bg-green-50 rounded-xl p-4 mb-4 border border-green-100">
+                  <div className="flex items-center justify-center gap-2 mb-3">
+                    <CheckCircle className="w-4 h-4 text-green-500" />
+                    <span className="text-xs text-green-600 font-medium uppercase tracking-wide">After</span>
+                  </div>
+                  <div className="text-green-700 font-semibold">{comparison.after}</div>
+                </div>
+                
+                {/* Improvement */}
+                <div className="text-sm font-semibold px-4 py-2 rounded-full inline-block text-white" style={{backgroundColor: '#3519E2'}}>
+                  {comparison.improvement}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

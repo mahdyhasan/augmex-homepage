@@ -1,90 +1,105 @@
 import React from 'react';
-import { Heart, CheckCircle } from 'lucide-react';
+import { Heart, CheckCircle, Award, Users, Target, Globe } from 'lucide-react';
 
 const About = () => {
+  const features = [
+    {
+      icon: CheckCircle,
+      title: 'Rigorous Vetting Process',
+      description: 'Every professional goes through our comprehensive 7-step screening process, ensuring only the top 1% make it through.'
+    },
+    {
+      icon: Target,
+      title: 'Cultural Alignment',
+      description: 'We match not just skills, but personalities and values to ensure seamless team integration and long-term success.'
+    },
+    {
+      icon: Heart,
+      title: 'Ongoing Support',
+      description: 'Our relationship doesn\'t end at placement. We provide continuous support to ensure lasting partnerships.'
+    }
+  ];
+
+  const metrics = [
+    { icon: Award, label: 'Success Rate', value: '98%', color: '#10b981' },
+    { icon: Users, label: 'Talent Pool', value: '50K+', color: '#3519E2' },
+    { icon: Globe, label: 'Countries', value: '25+', color: '#f59e0b' },
+    { icon: Heart, label: 'Years Experience', value: '15+', color: '#ec4899' }
+  ];
+
   return (
-    <section id="about" className="py-24 bg-gradient-to-b from-gray-50 to-white">
+    <section id="about" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main About Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="order-2 lg:order-1">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-800 text-sm font-medium mb-6">
-              <Heart className="w-4 h-4 mr-2" />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+          <div>
+            <div className="inline-flex items-center px-4 py-2 rounded-full text-white text-sm font-medium mb-6" style={{backgroundColor: '#3519E2'}}>
+              <Heart className="w-3 h-3 mr-2" />
               Our Story
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               Connecting Dreams
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+              <span className="block text-transparent bg-clip-text" style={{backgroundImage: 'linear-gradient(135deg, #3519E2, #8b5cf6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
                 With Opportunities
               </span>
             </h2>
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
               We're not just recruiters – we're dream makers, connecting exceptional talent with visionary companies across the globe.
             </p>
             
-            <div className="space-y-6 mb-8">
-              <div className="flex items-start gap-4">
-                <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Rigorous Vetting Process</h4>
-                  <p className="text-gray-600">Every professional goes through our comprehensive 7-step screening process, ensuring only the top 1% make it through.</p>
+            <div className="space-y-4">
+              {features.map((feature, index) => (
+                <div key={index} className="flex items-start gap-4 p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors duration-200">
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{backgroundColor: '#3519E2'}}>
+                    <feature.icon className="w-4 h-4 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-1">{feature.title}</h4>
+                    <p className="text-gray-600 text-sm">{feature.description}</p>
+                  </div>
                 </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Cultural Alignment</h4>
-                  <p className="text-gray-600">We match not just skills, but personalities and values to ensure seamless team integration and long-term success.</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Ongoing Support</h4>
-                  <p className="text-gray-600">Our relationship doesn't end at placement. We provide continuous support to ensure lasting partnerships.</p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
           
-          <div className="order-1 lg:order-2">
-            <div className="relative">
-              {/* Main image */}
-              <div className="relative bg-gradient-to-br from-blue-100 to-purple-100 rounded-3xl p-8">
-                <img
-                  src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
-                  alt="Global team collaboration"
-                  className="rounded-2xl shadow-2xl w-full h-[400px] object-cover"
-                />
-                
-                {/* Floating cards */}
-                <div className="absolute -top-4 -right-4 bg-white rounded-2xl p-4 shadow-lg">
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-teal-500 rounded-full flex items-center justify-center">
-                      <CheckCircle className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <div className="text-lg font-bold text-gray-900">98%</div>
-                      <div className="text-sm text-gray-600">Success Rate</div>
-                    </div>
+          <div className="relative">
+            {/* Main image container */}
+            <div className="relative bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl p-6">
+              <img
+                src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+                alt="Global team collaboration"
+                className="rounded-2xl shadow-lg w-full h-80 object-cover"
+              />
+              
+              {/* Floating metric cards */}
+              <div className="absolute -top-3 -right-3 bg-white rounded-xl p-3 shadow-lg border border-gray-100">
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{backgroundColor: '#10b98115'}}>
+                    <Award className="w-4 h-4" style={{color: '#10b981'}} />
+                  </div>
+                  <div>
+                    <div className="text-lg font-bold text-gray-900">98%</div>
+                    <div className="text-xs text-gray-600">Success</div>
                   </div>
                 </div>
-                
-                <div className="absolute -bottom-4 -left-4 bg-white rounded-2xl p-4 shadow-lg">
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
-                      <Heart className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <div className="text-lg font-bold text-gray-900">15+</div>
-                      <div className="text-sm text-gray-600">Years Experience</div>
-                    </div>
+              </div>
+              
+              <div className="absolute -bottom-3 -left-3 bg-white rounded-xl p-3 shadow-lg border border-gray-100">
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{backgroundColor: '#3519E215'}}>
+                    <Users className="w-4 h-4" style={{color: '#3519E2'}} />
+                  </div>
+                  <div>
+                    <div className="text-lg font-bold text-gray-900">~60%</div>
+                    <div className="text-xs text-gray-600">Cost Saving</div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
+
       </div>
     </section>
   );
