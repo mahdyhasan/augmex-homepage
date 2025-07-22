@@ -99,25 +99,7 @@ const About = () => {
           </div>
         </div>
 
-        {/* Metrics Section */}
-        <div className="bg-gray-50 rounded-3xl p-8">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Impact in Numbers</h3>
-            <p className="text-gray-600">Building bridges between talent and opportunity worldwide</p>
-          </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {metrics.map((metric, index) => (
-              <div key={index} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 text-center hover:shadow-md transition-shadow duration-200">
-                <div className="w-12 h-12 rounded-xl mx-auto mb-4 flex items-center justify-center" style={{backgroundColor: `${metric.color}15`}}>
-                  <metric.icon className="w-5 h-5" style={{color: metric.color}} />
-                </div>
-                <div className="text-2xl font-bold text-gray-900 mb-1">{metric.value}</div>
-                <div className="text-gray-600 text-sm">{metric.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
+
       </div>
     </section>
   );
