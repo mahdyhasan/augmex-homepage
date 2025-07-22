@@ -9,6 +9,7 @@ import Process from './components/Process';
 import Results from './components/Results';
 import Testimonials from './components/Testimonials';
 import WhyChooseUs from './components/WhyChooseUs';
+import Story from './components/Story';
 import CTA from './components/CTA';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
       <Results />
       <Testimonials />
       <WhyChooseUs />
+      <Story />
       <CTA />
     </div>
   );
