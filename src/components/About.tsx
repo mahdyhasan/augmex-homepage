@@ -90,8 +90,8 @@ const About = () => {
                     <Users className="w-4 h-4" style={{color: '#3519E2'}} />
                   </div>
                   <div>
-                    <div className="text-lg font-bold text-gray-900">50K+</div>
-                    <div className="text-xs text-gray-600">Talent</div>
+                    <div className="text-lg font-bold text-gray-900">~60%</div>
+                    <div className="text-xs text-gray-600">Cost Saving</div>
                   </div>
                 </div>
               </div>
