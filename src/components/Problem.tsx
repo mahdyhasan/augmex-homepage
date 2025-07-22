@@ -61,33 +61,49 @@ const Problem = () => {
               Businesses Face
             </span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Hiring exceptional talent has become a nightmare. Companies are stuck in outdated processes that waste time, money, and opportunities.
-          </p>
         </div>
         
-        {/* Problems Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mb-16">
-          {problems.map((problem, index) => (
-            <div 
-              key={index}
-              className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 text-center group"
-            >
-              <div 
-                className="w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
-                style={{backgroundColor: `${problem.color}15`}}
-              >
-                <problem.icon className="h-4 w-4" style={{color: problem.color}} />
-              </div>
-              
-              <div className="text-xl font-bold mb-2" style={{color: problem.color}}>{problem.stat}</div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">{problem.title}</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">{problem.description}</p>
+        {/* Two Column Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+          {/* Left: Paragraph */}
+          <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+            <h3 className="text-xl font-semibold text-gray-900 mb-6">Here's what keeps business leaders up at night:</h3>
+            <div className="space-y-4 text-gray-600 leading-relaxed">
+              <p>
+                You need amazing talent, but finding them feels impossible. You post jobs and get hundreds of resumes, but somehow none feel quite right. Your competitors seem to effortlessly attract top performers while you're stuck sifting through endless applications.
+              </p>
+              <p>
+                The hiring process drags on for months. Your team is overworked. Deadlines are slipping. And that game-changing project? It's still waiting for the right person to make it happen.
+              </p>
+              <p className="font-semibold text-gray-900">
+                Sound familiar? You're definitely not alone in this struggle.
+              </p>
             </div>
-          ))}
+          </div>
+
+          {/* Right: Problem Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {problems.map((problem, index) => (
+              <div 
+                key={index}
+                className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 text-center group"
+              >
+                <div 
+                  className="w-10 h-10 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300"
+                  style={{backgroundColor: `${problem.color}15`}}
+                >
+                  <problem.icon className="h-4 w-4" style={{color: problem.color}} />
+                </div>
+                
+                <div className="text-lg font-bold mb-2" style={{color: problem.color}}>{problem.stat}</div>
+                <h4 className="text-sm font-semibold text-gray-900 mb-2">{problem.title}</h4>
+                <p className="text-gray-600 text-xs leading-relaxed">{problem.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* Bottom Impact */}
+        {/* Real Cost of Bad Hiring */}
         <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
           <div className="text-center mb-8">
             <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">The Real Cost of Bad Hiring</h3>
