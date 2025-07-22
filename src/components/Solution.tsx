@@ -1,190 +1,157 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Heart, Target, Users, Zap, Globe, Shield, CheckCircle, ArrowRight } from 'lucide-react';
 
 const Solution = () => {
-  const [activeTab, setActiveTab] = useState(0);
-
   const beliefs = [
     {
       icon: Heart,
       title: 'People Are Everything',
-      description: 'Great companies are built by great people. Every hire should elevate your entire team.',
-      color: '#ec4899',
-      details: 'We believe that the right person in the right role can transform an entire organization. Our approach focuses on finding individuals who not only have the skills but also the passion and drive to make a real difference.'
+      description: 'Great companies are built by great people. Every hire should elevate your entire team, not just fill a position.'
     },
     {
       icon: Target,
       title: 'Quality Over Quantity',
-      description: 'One exceptional hire beats ten mediocre ones. We focus on finding the perfect match.',
-      color: '#3519E2',
-      details: 'Our rigorous vetting process ensures that only the top 1% of candidates make it through. We would rather present you with 2-3 exceptional candidates than 20 average ones.'
+      description: 'One exceptional hire beats ten mediocre ones. We focus on finding the perfect match, not just any match.'
     },
     {
       icon: Globe,
       title: 'Talent Has No Borders',
-      description: 'The best professionals might be on the other side of the world.',
-      color: '#10b981',
-      details: 'In our interconnected world, the best talent is distributed globally. We help you tap into this worldwide pool of exceptional professionals who can work seamlessly with your team.'
+      description: 'The best professionals might be on the other side of the world. Geography should never limit excellence.'
     },
     {
       icon: Zap,
       title: 'Speed Without Compromise',
-      description: 'Fast hiring doesn\'t mean rushed decisions. Quality and speed can coexist.',
-      color: '#f59e0b',
-      details: 'Our streamlined process eliminates unnecessary delays while maintaining our high standards. Speed and quality are not mutually exclusive when you have the right methodology.'
+      description: 'Fast hiring doesn\'t mean rushed decisions. Quality and speed can coexist with the right process.'
     },
     {
       icon: Users,
       title: 'Culture Fit Is Critical',
-      description: 'Skills can be taught, but culture fit is innate. We prioritize alignment.',
-      color: '#8b5cf6',
-      details: 'Technical skills are just the foundation. We dive deep into understanding your company culture and values to ensure every candidate will thrive in your unique environment.'
+      description: 'Skills can be taught, but culture fit is innate. We prioritize alignment for long-term success.'
     },
     {
       icon: Shield,
       title: 'Transparency Builds Trust',
-      description: 'No hidden fees, no surprises. You deserve complete visibility upfront.',
-      color: '#06b6d4',
-      details: 'Trust is earned through transparency. From pricing to process, from timelines to expectations, we believe in complete openness at every step of our partnership.'
+      description: 'No hidden fees, no surprises. You deserve complete visibility into process and costs upfront.'
     }
   ];
 
   const principles = [
-    { title: 'Human-First Approach', description: 'We treat every candidate as a person, not a resume. This creates better matches and lasting relationships.' },
-    { title: 'Deep Understanding', description: 'We invest time to truly understand your company culture, values, and the specific challenges you face.' },
-    { title: 'Rigorous Vetting', description: 'Our multi-stage evaluation process ensures only the top 1% of candidates reach your interview stage.' },
-    { title: 'Ongoing Partnership', description: 'Our relationship doesn\'t end at placement. We provide ongoing support to ensure long-term success.' }
+    { 
+      title: 'Human-First Approach', 
+      description: 'We treat every candidate as a person, not a resume. This creates better matches and lasting relationships.' 
+    },
+    { 
+      title: 'Deep Understanding', 
+      description: 'We invest time to truly understand your company culture, values, and the specific challenges you face.' 
+    },
+    { 
+      title: 'Rigorous Vetting', 
+      description: 'Our multi-stage evaluation process ensures only the top 1% of candidates reach your interview stage.' 
+    },
+    { 
+      title: 'Ongoing Partnership', 
+      description: 'Our relationship doesn\'t end at placement. We provide ongoing support to ensure long-term success.' 
+    }
   ];
 
   return (
-    <section id="solution" className="py-20 bg-white">
+    <section id="solution" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 rounded-full text-white text-sm font-medium mb-6" style={{backgroundColor: '#3519E2'}}>
-            <Heart className="w-3 h-3 mr-2" />
-            Our Philosophy
+        
+        {/* Our Philosophy Section */}
+        <div className="mb-24">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center px-6 py-3 rounded-full bg-gray-100 text-gray-700 text-sm font-medium mb-8">
+              <Heart className="w-4 h-4 mr-2" />
+              Our Philosophy
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              Here's What We Believe
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Our beliefs aren't just words—they're the foundation of everything we do and guide every decision we make.
+            </p>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Here's What
-            <span className="block text-transparent bg-clip-text" style={{backgroundImage: 'linear-gradient(135deg, #3519E2, #8b5cf6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
-              We Believe
-            </span>
-          </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Our beliefs aren't just words—they're the foundation of everything we do
-          </p>
-        </div>
 
-        {/* Beliefs Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {beliefs.map((belief, index) => (
-            <div 
-              key={index}
-              className="bg-gray-50 rounded-2xl p-6 hover:bg-white hover:shadow-lg transition-all duration-300 border border-gray-100 group cursor-pointer"
-              onClick={() => setActiveTab(index)}
-            >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {beliefs.map((belief, index) => (
               <div 
-                className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"
-                style={{backgroundColor: `${belief.color}15`}}
+                key={index}
+                className="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 group"
               >
-                <belief.icon className="h-4 w-4" style={{color: belief.color}} />
+                <div className="w-14 h-14 bg-gray-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-gray-200 transition-colors duration-300">
+                  <belief.icon className="h-6 w-6 text-gray-600" />
+                </div>
+                
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">{belief.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{belief.description}</p>
               </div>
-              
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">{belief.title}</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">{belief.description}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* Active Content */}
-        <div className="bg-gray-50 rounded-3xl p-8 mb-16">
-          <div className="max-w-4xl mx-auto text-center">
-            <div
-              className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6"
-              style={{backgroundColor: `${beliefs[activeTab].color}15`}}
-            >
-              {React.createElement(beliefs[activeTab].icon, {
-                className: "w-6 h-6",
-                style: {color: beliefs[activeTab].color}
-              })}
-            </div>
-            
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">{beliefs[activeTab].title}</h3>
-            <p className="text-lg text-gray-600 leading-relaxed mb-6">{beliefs[activeTab].details}</p>
-            
-            {/* Progress indicator */}
-            <div className="flex justify-center gap-2">
-              {beliefs.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setActiveTab(index)}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                    index === activeTab ? 'w-8' : ''
-                  }`}
-                  style={{backgroundColor: index === activeTab ? '#3519E2' : '#d1d5db'}}
-                />
-              ))}
-            </div>
+            ))}
           </div>
         </div>
 
-        {/* Principles Timeline */}
-        <div className="mb-16">
-          <div className="text-center mb-12">
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+        {/* How We Make This Reality Section */}
+        <div className="mb-24">
+          <div className="text-center mb-16">
+            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               How We Make This a Reality
             </h3>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Our principles translate into concrete actions that deliver exceptional results for every client.
+            </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {principles.map((principle, index) => (
               <div key={index} className="text-center">
                 <div 
-                  className="w-16 h-16 rounded-2xl flex items-center justify-center text-white font-bold text-lg mb-4 mx-auto"
+                  className="w-16 h-16 rounded-2xl flex items-center justify-center text-white font-bold text-xl mb-6 mx-auto shadow-lg"
                   style={{backgroundColor: '#3519E2'}}
                 >
                   {String(index + 1).padStart(2, '0')}
                 </div>
                 
-                <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 h-full hover:shadow-md transition-shadow duration-300">
-                  <h4 className="text-lg font-semibold text-gray-900 mb-3">{principle.title}</h4>
-                  <p className="text-gray-600 text-sm">{principle.description}</p>
+                <div className="bg-white border border-gray-200 rounded-2xl p-6 h-full hover:shadow-md transition-shadow duration-300">
+                  <h4 className="text-lg font-semibold text-gray-900 mb-4">{principle.title}</h4>
+                  <p className="text-gray-600 leading-relaxed">{principle.description}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Impact Statement */}
-        <div className="bg-gray-50 rounded-3xl p-8 text-center">
-          <div className="max-w-4xl mx-auto">
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+        {/* The Result Section */}
+        <div className="bg-gray-50 rounded-3xl p-12">
+          <div className="max-w-4xl mx-auto text-center">
+            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
               The Result? Hiring That Actually Works
             </h3>
-            <p className="text-lg text-gray-600 mb-8">
+            <p className="text-xl text-gray-600 mb-12 leading-relaxed">
               When you align with partners who share your commitment to excellence, magic happens. 
               You get faster results, better candidates, and teams that truly elevate your business.
             </p>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
               {['Faster Time-to-Hire', 'Better Culture Fit', 'Lower Total Cost'].map((benefit, index) => (
-                <div key={index} className="flex items-center justify-center gap-3 bg-white rounded-xl p-4">
-                  <CheckCircle className="w-4 h-4 text-green-500" />
-                  <span className="text-gray-900 font-medium">{benefit}</span>
+                <div key={index} className="bg-white rounded-2xl p-6 border border-gray-200 hover:shadow-md transition-shadow duration-300">
+                  <div className="flex items-center justify-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-gray-400" />
+                    <span className="text-gray-900 font-semibold">{benefit}</span>
+                  </div>
                 </div>
               ))}
             </div>
 
             <button 
-              className="inline-flex items-center px-8 py-4 rounded-xl font-semibold text-lg text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              className="inline-flex items-center px-10 py-4 rounded-2xl font-semibold text-lg text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
               style={{backgroundColor: '#3519E2'}}
             >
               Experience Our Approach
-              <ArrowRight className="w-4 h-4 ml-2" />
+              <ArrowRight className="w-5 h-5 ml-3" />
             </button>
           </div>
         </div>
+
       </div>
     </section>
   );
