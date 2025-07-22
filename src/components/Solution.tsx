@@ -100,11 +100,14 @@ const Solution = () => {
         {/* Active Content */}
         <div className="bg-gray-50 rounded-3xl p-8 mb-16">
           <div className="max-w-4xl mx-auto text-center">
-            <div 
+            <div
               className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6"
               style={{backgroundColor: `${beliefs[activeTab].color}15`}}
             >
-              <beliefs[activeTab].icon className="w-6 h-6" style={{color: beliefs[activeTab].color}} />
+              {React.createElement(beliefs[activeTab].icon, {
+                className: "w-6 h-6",
+                style: {color: beliefs[activeTab].color}
+              })}
             </div>
             
             <h3 className="text-2xl font-bold text-gray-900 mb-4">{beliefs[activeTab].title}</h3>
