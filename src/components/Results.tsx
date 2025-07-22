@@ -72,23 +72,7 @@ const Results = () => {
     }
   ];
 
-  const testimonialRotation = [
-    {
-      quote: "StaffAugment transformed our hiring process. What used to take 6 months now takes 2 weeks.",
-      author: "Sarah Chen, CTO at TechFlow",
-      metric: "6→2 weeks"
-    },
-    {
-      quote: "The quality of candidates is exceptional. Our last 5 hires are all top performers.",
-      author: "Michael Rodriguez, VP Engineering",
-      metric: "100% success"
-    },
-    {
-      quote: "Finally, a recruitment partner that actually understands our culture and needs.",
-      author: "Emily Watson, Head of People",
-      metric: "Perfect fit"
-    }
-  ];
+
 
   // Animate counters on component mount
   useEffect(() => {
