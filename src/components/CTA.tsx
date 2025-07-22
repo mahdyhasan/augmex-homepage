@@ -1,58 +1,31 @@
 import React from 'react';
-import { ArrowRight, Star, Users } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const CTA = () => {
   return (
-    <section className="py-20 bg-gradient-to-r from-blue-900 via-blue-800 to-indigo-900 text-white relative overflow-hidden">
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-white rounded-full"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-24 h-24 bg-blue-300 rounded-full"></div>
-        <div className="absolute top-1/2 right-1/3 w-16 h-16 bg-cyan-300 rounded-full"></div>
-      </div>
-      
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">
-          Ready to Write Your Success Story?
-        </h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          <div className="flex items-center justify-center">
-            <Star className="h-6 w-6 text-yellow-400 mr-2" />
-            <span className="text-blue-200">Top 3% Talent</span>
-          </div>
-          <div className="flex items-center justify-center">
-            <Users className="h-6 w-6 text-green-400 mr-2" />
-            <span className="text-blue-200">99% Success Rate</span>
-          </div>
-          <div className="flex items-center justify-center">
-            <ArrowRight className="h-6 w-6 text-purple-400 mr-2" />
-            <span className="text-blue-200">90-Day Guarantee</span>
-          </div>
-        </div>
-        
-        <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8 text-left space-y-4">
-          <p className="text-blue-100 leading-relaxed text-lg">
-            Look, we know you've probably been burned by recruiters before. Maybe they sent you candidates who looked good on paper but were completely wrong for your team. Or they promised the moon and delivered... well, let's not talk about what they delivered.
+    <section className="py-20 bg-white">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="bg-gray-50 rounded-3xl p-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            Ready to Build Your Dream Team?
+          </h2>
+          
+          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+            Stop struggling with hiring. Get matched with world-class talent in 48 hours.
           </p>
-          <p className="text-blue-100 leading-relaxed text-lg">
-            Here's the thing: Your next great hire is out there right now. They might be scrolling LinkedIn, considering their options, or maybe they're not even looking yet - but they'd jump at the right opportunity.
-          </p>
-          <p className="text-white font-medium text-lg">
-            The question isn't whether amazing talent exists. The question is: will you find them before your competitors do?
-          </p>
-        </div>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          <button className="bg-white text-blue-900 font-semibold py-4 px-6 rounded-xl hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg">
-            Start Your Search Today
-          </button>
-          <button className="border-2 border-white text-white font-semibold py-4 px-6 rounded-xl hover:bg-white hover:text-blue-900 transition-all duration-300 backdrop-blur-sm">
-            View Success Stories
-          </button>
-          <button className="border-2 border-white text-white font-semibold py-4 px-6 rounded-xl hover:bg-white hover:text-blue-900 transition-all duration-300 backdrop-blur-sm">
-            Meet Our Team
-          </button>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button 
+              className="inline-flex items-center px-8 py-4 rounded-xl font-semibold text-lg text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              style={{backgroundColor: '#3519E2'}}
+            >
+              Start Hiring Today
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </button>
+            <button className="px-8 py-4 rounded-xl font-semibold text-lg border-2 border-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-100 transition-all duration-300">
+              Schedule a Call
+            </button>
+          </div>
         </div>
       </div>
     </section>
