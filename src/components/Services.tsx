@@ -95,15 +95,7 @@ const Services = () => {
             From startups to Fortune 500 companies, we understand unique talent requirements and deliver custom hiring solutions.
           </p>
           
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <div key={index} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
-                <div className="text-2xl md:text-3xl font-bold mb-2" style={{color: '#3519E2'}}>{stat.value}</div>
-                <div className="text-gray-600 text-sm">{stat.label}</div>
-              </div>
-            ))}
-          </div>
+
         </div>
         
         {/* Services Grid */}
