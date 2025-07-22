@@ -1,50 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { Trophy, Users, Clock, TrendingUp, ArrowRight, CheckCircle, X, Target } from 'lucide-react';
+import React from 'react';
+import { Trophy, ArrowRight, CheckCircle, X } from 'lucide-react';
 
 const Results = () => {
-  const [selectedMetric, setSelectedMetric] = useState(0);
-  const [counters, setCounters] = useState({
-    clients: 0,
-    placements: 0,
-    satisfaction: 0,
-    retention: 0
-  });
-
-  const metrics = [
-    {
-      icon: Users,
-      label: 'Happy Clients',
-      value: 500,
-      suffix: '+',
-      color: '#3519E2',
-      description: 'Companies trust us with their hiring needs'
-    },
-    {
-      icon: Trophy,
-      label: 'Successful Placements',
-      value: 2400,
-      suffix: '+',
-      color: '#10b981',
-      description: 'Professionals placed in top companies'
-    },
-    {
-      icon: Target,
-      label: 'Client Satisfaction',
-      value: 98,
-      suffix: '%',
-      color: '#f59e0b',
-      description: 'Would recommend us to others'
-    },
-    {
-      icon: TrendingUp,
-      label: 'Talent Retention',
-      value: 94,
-      suffix: '%',
-      color: '#ec4899',
-      description: 'Still with companies after 2+ years'
-    }
-  ];
-
   const beforeAfter = [
     {
       category: 'Hiring Time',
@@ -72,131 +29,128 @@ const Results = () => {
     }
   ];
 
-
-
-  // Animate counters on component mount
-  useEffect(() => {
-    const duration = 2000;
-    const steps = 60;
-    const interval = duration / steps;
-
-    const timer = setInterval(() => {
-      setCounters(prev => {
-        const newCounters = { ...prev };
-        let allComplete = true;
-
-        metrics.forEach((metric, index) => {
-          const key = Object.keys(newCounters)[index];
-          const target = metric.value;
-          const current = newCounters[key];
-          
-          if (current < target) {
-            allComplete = false;
-            const increment = Math.ceil((target - current) / 10);
-            newCounters[key] = Math.min(current + increment, target);
-          }
-        });
-
-        if (allComplete) {
-          clearInterval(timer);
-        }
-        
-        return newCounters;
-      });
-    }, interval);
-
-    return () => clearInterval(timer);
-  }, []);
-
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 rounded-full text-white text-sm font-medium mb-6" style={{backgroundColor: '#3519E2'}}>
-            <Trophy className="w-3 h-3 mr-2" />
+          <div className="inline-flex items-center px-6 py-3 rounded-full bg-gray-100 text-gray-700 text-sm font-medium mb-8">
+            <Trophy className="w-4 h-4 mr-2" />
             Proven Results
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            The Results
-            <span className="block text-transparent bg-clip-text" style={{backgroundImage: 'linear-gradient(135deg, #3519E2, #8b5cf6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
-              Speak for Themselves
-            </span>
+            The Results Speak for Themselves
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Don't just take our word for it. Here's how we've transformed hiring for companies worldwide.
-          </p>
         </div>
 
-        {/* Animated Metrics */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
-          {metrics.map((metric, index) => (
-            <div 
-              key={index}
-              className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 text-center hover:shadow-lg transition-all duration-300 cursor-pointer group"
-              onClick={() => setSelectedMetric(index)}
-            >
-              <div 
-                className="w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
-                style={{backgroundColor: `${metric.color}15`}}
-              >
-                <metric.icon className="w-4 h-4" style={{color: metric.color}} />
+        {/* Main Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
+          {/* Left: Content */}
+          <div className="bg-white rounded-3xl p-10 border border-gray-200">
+            <h3 className="text-2xl font-semibold text-gray-900 mb-8">
+              The Transformation Our Clients Experience
+            </h3>
+            
+            <div className="space-y-6 text-gray-600 leading-relaxed">
+              <p className="text-lg">
+                Our clients don't just hire - they upgrade their entire capability. They go from struggling to find decent candidates to choosing between multiple exceptional options. From lengthy hiring processes to efficient, streamlined recruitment.
+              </p>
+              
+              <p className="text-lg">
+                What's the difference? We treat every placement like our reputation depends on it. Because it does.
+              </p>
+              
+              <div className="bg-gray-50 rounded-2xl p-6 border-l-4" style={{borderLeftColor: '#3519E2'}}>
+                <p className="text-lg font-medium text-gray-900">
+                  When your new hire becomes your star performer, that's when we know we've done our job right.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Right: Visual Element */}
+          <div className="bg-white rounded-3xl p-10 border border-gray-200">
+            <div className="text-center">
+              <div className="w-20 h-20 rounded-3xl flex items-center justify-center mx-auto mb-8" style={{backgroundColor: '#3519E215'}}>
+                <Trophy className="w-10 h-10" style={{color: '#3519E2'}} />
               </div>
               
-              <div className="text-2xl md:text-3xl font-bold mb-2" style={{color: metric.color}}>
-                {Object.values(counters)[index]}{metric.suffix}
+              <h4 className="text-xl font-semibold text-gray-900 mb-6">
+                From Hiring Struggles to Success Stories
+              </h4>
+              
+              <div className="space-y-4">
+                <div className="bg-red-50 rounded-xl p-4 border border-red-100">
+                  <div className="flex items-center justify-center gap-2 mb-2">
+                    <X className="w-4 h-4 text-red-500" />
+                    <span className="text-sm font-medium text-red-700">Before</span>
+                  </div>
+                  <p className="text-red-700 font-medium">Struggling with hiring</p>
+                </div>
+                
+                <div className="flex justify-center">
+                  <ArrowRight className="w-6 h-6 text-gray-400" />
+                </div>
+                
+                <div className="bg-green-50 rounded-xl p-4 border border-green-100">
+                  <div className="flex items-center justify-center gap-2 mb-2">
+                    <CheckCircle className="w-4 h-4 text-green-500" />
+                    <span className="text-sm font-medium text-green-700">After</span>
+                  </div>
+                  <p className="text-green-700 font-medium">Hiring star performers</p>
+                </div>
               </div>
-              <div className="text-gray-900 font-medium mb-1">{metric.label}</div>
-              <div className="text-gray-600 text-xs">{metric.description}</div>
             </div>
-          ))}
+          </div>
         </div>
 
         {/* Before vs After Comparison */}
-        <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 mb-16">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Before vs After StaffAugment</h3>
-            <p className="text-gray-600">See the dramatic transformation in hiring outcomes</p>
+        <div className="bg-white rounded-3xl p-10 border border-gray-200">
+          <div className="text-center mb-12">
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+              Before vs After StaffAugment
+            </h3>
+            <p className="text-lg text-gray-600">
+              See the dramatic transformation in hiring outcomes
+            </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {beforeAfter.map((comparison, index) => (
               <div key={index} className="text-center">
-                <h4 className="font-semibold text-gray-900 mb-4">{comparison.category}</h4>
+                <h4 className="font-semibold text-gray-900 mb-6 text-lg">{comparison.category}</h4>
                 
                 {/* Before */}
-                <div className="bg-red-50 rounded-xl p-4 mb-3 border border-red-100">
-                  <div className="flex items-center justify-center gap-2 mb-2">
-                    <X className="w-3 h-3 text-red-500" />
-                    <span className="text-xs text-red-600 font-medium">BEFORE</span>
+                <div className="bg-red-50 rounded-xl p-4 mb-4 border border-red-100">
+                  <div className="flex items-center justify-center gap-2 mb-3">
+                    <X className="w-4 h-4 text-red-500" />
+                    <span className="text-xs text-red-600 font-medium uppercase tracking-wide">Before</span>
                   </div>
-                  <div className="text-red-700 font-medium">{comparison.before}</div>
+                  <div className="text-red-700 font-semibold">{comparison.before}</div>
                 </div>
                 
                 {/* Arrow */}
-                <div className="flex justify-center mb-3">
-                  <ArrowRight className="w-4 h-4 text-gray-400" />
+                <div className="flex justify-center mb-4">
+                  <ArrowRight className="w-5 h-5 text-gray-400" />
                 </div>
                 
                 {/* After */}
-                <div className="bg-green-50 rounded-xl p-4 mb-3 border border-green-100">
-                  <div className="flex items-center justify-center gap-2 mb-2">
-                    <CheckCircle className="w-3 h-3 text-green-500" />
-                    <span className="text-xs text-green-600 font-medium">AFTER</span>
+                <div className="bg-green-50 rounded-xl p-4 mb-4 border border-green-100">
+                  <div className="flex items-center justify-center gap-2 mb-3">
+                    <CheckCircle className="w-4 h-4 text-green-500" />
+                    <span className="text-xs text-green-600 font-medium uppercase tracking-wide">After</span>
                   </div>
-                  <div className="text-green-700 font-medium">{comparison.after}</div>
+                  <div className="text-green-700 font-semibold">{comparison.after}</div>
                 </div>
                 
                 {/* Improvement */}
-                <div className="text-xs font-semibold px-3 py-1 rounded-full inline-block" style={{backgroundColor: '#3519E215', color: '#3519E2'}}>
+                <div className="text-sm font-semibold px-4 py-2 rounded-full inline-block text-white" style={{backgroundColor: '#3519E2'}}>
                   {comparison.improvement}
                 </div>
               </div>
             ))}
           </div>
         </div>
-
-
       </div>
     </section>
   );
