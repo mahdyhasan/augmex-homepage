@@ -20,7 +20,7 @@ const Hero = () => {
             <div className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-full px-6 py-3 shadow-lg mb-8">
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
               <Star className="w-4 h-4 text-yellow-500" />
-              <span className="text-gray-700 text-sm font-medium">Top 3% Remote Talent Available</span>
+              <span className="text-gray-700 text-sm font-medium">Work With Top 3% Talent</span>
             </div>
 
             {/* Main Headline */}
@@ -50,13 +50,13 @@ const Hero = () => {
                 className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold text-lg text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                 style={{backgroundColor: '#3519E2'}}
               >
-                Start Hiring Today
+                Start Hiring&nbsp;
                 <ArrowRight className="ml-2 h-4 w-4" />
               </button>
               
               <button className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold text-lg border-2 border-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-50 transition-all duration-300">
                 <CheckCircle className="mr-2 h-4 w-4" />
-                View Success Stories
+                Success Stories
               </button>
             </div>
 
@@ -94,17 +94,17 @@ const Hero = () => {
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
                     <span className="text-gray-600">Team Productivity</span>
-                    <span className="font-semibold text-green-600">+45%</span>
+                    <span className="font-semibold text-green-600">+100%</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-gradient-to-r from-green-400 to-green-600 h-2 rounded-full w-3/4"></div>
+                    <div className="bg-gradient-to-r from-green-400 to-green-600 h-2 rounded-full w-full"></div>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-gray-600">Cost Efficiency</span>
-                    <span className="font-semibold text-blue-600">+60%</span>
+                    <span className="font-semibold text-blue-600">+100%</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-gradient-to-r from-blue-400 to-blue-600 h-2 rounded-full w-4/5"></div>
+                    <div className="bg-gradient-to-r from-blue-400 to-blue-600 h-2 rounded-full w-full"></div>
                   </div>
                 </div>
               </div>
@@ -116,7 +116,7 @@ const Hero = () => {
                     <Star className="w-8 h-8 text-white" />
                   </div>
                   <h4 className="font-semibold text-gray-900 mb-2">5-Star Rating</h4>
-                  <p className="text-gray-600 text-sm mb-4">From 500+ satisfied clients worldwide</p>
+                  <p className="text-gray-600 text-sm mb-4">98% satisfied clients worldwide</p>
                   <div className="flex justify-center gap-1">
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />

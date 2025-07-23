@@ -34,7 +34,7 @@ const Story = () => {
               </p>
               
               <p className="text-xl font-semibold text-gray-900">
-                But here's the good news: You don't have to do this alone anymore.
+                But here's the good news: <span style={{fontWeight: 'normal'}}>You don't have to do this alone anymore.</span>
               </p>
             </div>
           </div>
