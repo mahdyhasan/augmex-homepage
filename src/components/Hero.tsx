@@ -1,12 +1,17 @@
 import React from "react";
+import { Star } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="bg-white relative px-6 py-28 md:py-36 lg:py-40">
+    <section className="bg-white relative px-6 py-16 md:py-20 lg:py-24">
       <div className="max-w-4xl mx-auto text-center">
         {/* Top Tag (optional badge) */}
-        <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-gray-100 text-sm font-medium text-gray-700 mb-6">
-          Remote Staffing Simplified
+        <div className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-full px-6 py-3 shadow-lg mb-8">
+          <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+          <Star className="w-4 h-4 text-yellow-500" />
+          <span className="text-gray-700 text-sm font-medium">
+            Top 3% Remote Talent Available
+          </span>
         </div>
 
         {/* H1 */}
@@ -24,8 +29,8 @@ const Hero = () => {
 
         {/* Subheadline */}
         <p className="mt-6 text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
-          Instantly access pre-vetted engineers, designers, and sales agents — all
-          ready to integrate and perform from day one.
+          Augmex helps growing teams scale fast with enterprise-ready professionals — vetted, onboarded, and performance-ready from day one.
+
         </p>
 
         {/* CTA Buttons */}
