@@ -1,137 +1,152 @@
 import React from 'react';
-import { ArrowRight, CheckCircle, Star, TrendingUp } from 'lucide-react';
+import { ArrowRight, Users, Clock, Shield } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-gray-50 via-white to-purple-50 flex items-center overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
-        <div className="absolute top-40 right-20 w-72 h-72 bg-gradient-to-r from-yellow-400 to-red-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-2000"></div>
-        <div className="absolute -bottom-32 left-1/2 w-72 h-72 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-4000"></div>
-      </div>
-
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
-          <div className="text-center lg:text-left">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-full px-6 py-3 shadow-lg mb-8">
-              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-              <Star className="w-4 h-4 text-yellow-500" />
-              <span className="text-gray-700 text-sm font-medium">Top 3% Remote Talent Available</span>
+    <section className="relative min-h-screen bg-gray-50 flex items-center overflow-hidden">
+      {/* Floating UI Elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Top Left Floating Card */}
+        <div className="absolute top-12 left-8 bg-white rounded-2xl shadow-lg p-4 border border-gray-100 transform -rotate-6 opacity-80">
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-full bg-gradient-to-r from-green-400 to-green-600 flex items-center justify-center">
+              <Users className="w-4 h-4 text-white" />
             </div>
-
-            {/* Main Headline */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-              <span className="text-gray-900">Strategic Staff</span>
-              <br />
-              <span 
-                className="text-transparent bg-clip-text" 
-                style={{
-                  backgroundImage: 'linear-gradient(135deg, #3519E2, #8b5cf6)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent'
-                }}
-              >
-                Augmentation
-              </span>
-            </h1>
-            
-            <p className="text-lg md:text-xl text-gray-600 max-w-2xl leading-relaxed mb-8 lg:mb-12">
-              Scale your team with exceptional remote talent from Bangladesh. 
-              Seamless integration, immediate impact, transparent pricing.
-            </p>
-
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <button 
-                className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold text-lg text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-                style={{backgroundColor: '#3519E2'}}
-              >
-                Start Hiring Today
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </button>
-              
-              <button className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold text-lg border-2 border-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-50 transition-all duration-300">
-                <CheckCircle className="mr-2 h-4 w-4" />
-                View Success Stories
-              </button>
-            </div>
-
-            {/* Trust Indicators */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center lg:text-left">
-              <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-md">
-                <div className="text-3xl font-bold mb-1" style={{color: '#3519E2'}}>40-60%</div>
-                <div className="text-gray-600 text-sm">Cost Saving</div>
-              </div>
-              <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-md">
-                <div className="text-3xl font-bold mb-1" style={{color: '#3519E2'}}>7-14</div>
-                <div className="text-gray-600 text-sm">Days Turnaround</div>
-              </div>
-              <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-md">
-                <div className="text-3xl font-bold mb-1" style={{color: '#3519E2'}}>100%</div>
-                <div className="text-gray-600 text-sm">Transparent</div>
-              </div>
+            <div>
+              <div className="text-sm font-semibold text-gray-900">Remote Talent</div>
+              <div className="text-xs text-gray-500">Top 3% Available</div>
             </div>
           </div>
+        </div>
 
-          {/* Right Content - Floating Cards */}
-          <div className="relative hidden lg:block">
-            <div className="relative w-full h-96">
-              {/* Main Card */}
-              <div className="absolute top-0 right-0 w-80 bg-white rounded-3xl shadow-2xl p-8 border border-gray-100 transform rotate-3 hover:rotate-0 transition-transform duration-500">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center">
-                    <TrendingUp className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900">Growth Analytics</h3>
-                    <p className="text-gray-500 text-sm">Real-time performance</p>
-                  </div>
-                </div>
-                <div className="space-y-4">
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-600">Team Productivity</span>
-                    <span className="font-semibold text-green-600">+45%</span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-gradient-to-r from-green-400 to-green-600 h-2 rounded-full w-3/4"></div>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-600">Cost Efficiency</span>
-                    <span className="font-semibold text-blue-600">+60%</span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-gradient-to-r from-blue-400 to-blue-600 h-2 rounded-full w-4/5"></div>
-                  </div>
-                </div>
-              </div>
+        {/* Top Right Badge */}
+        <div className="absolute top-16 right-12 bg-white rounded-full shadow-lg px-4 py-2 border border-gray-100 transform rotate-3">
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+            <span className="text-sm font-medium text-gray-700">Verified Talent</span>
+            <span className="text-sm text-gray-500">Available Now</span>
+            <ArrowRight className="w-3 h-3 text-gray-400" />
+          </div>
+        </div>
 
-              {/* Secondary Card */}
-              <div className="absolute bottom-0 left-0 w-72 bg-white rounded-3xl shadow-xl p-6 border border-gray-100 transform -rotate-2 hover:rotate-0 transition-transform duration-500">
-                <div className="text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 flex items-center justify-center">
-                    <Star className="w-8 h-8 text-white" />
-                  </div>
-                  <h4 className="font-semibold text-gray-900 mb-2">5-Star Rating</h4>
-                  <p className="text-gray-600 text-sm mb-4">From 500+ satisfied clients worldwide</p>
-                  <div className="flex justify-center gap-1">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                    ))}
-                  </div>
-                </div>
-              </div>
+        {/* Bottom Left Stats Card */}
+        <div className="absolute bottom-24 left-12 bg-white rounded-2xl shadow-lg p-6 border border-gray-100 transform rotate-2 opacity-90">
+          <div className="text-center">
+            <div className="text-2xl font-bold mb-1" style={{color: '#3519E2'}}>40-60%</div>
+            <div className="text-xs text-gray-600">Cost Saving</div>
+          </div>
+        </div>
 
-              {/* Floating Elements */}
-              <div className="absolute top-1/4 left-1/4 w-20 h-20 bg-gradient-to-r from-purple-400 to-purple-600 rounded-2xl shadow-lg transform rotate-12 animate-float"></div>
-              <div className="absolute bottom-1/4 right-1/4 w-16 h-16 bg-gradient-to-r from-green-400 to-green-600 rounded-2xl shadow-lg transform -rotate-12 animate-float" style={{animationDelay: '1s'}}></div>
+        {/* Bottom Right Stats */}
+        <div className="absolute bottom-32 right-16 space-y-4">
+          <div className="bg-white rounded-xl shadow-lg p-4 border border-gray-100 transform -rotate-1">
+            <div className="text-center">
+              <div className="text-lg font-bold mb-1" style={{color: '#3519E2'}}>7-14</div>
+              <div className="text-xs text-gray-600">Days Setup</div>
+            </div>
+          </div>
+          <div className="bg-white rounded-xl shadow-lg p-4 border border-gray-100 transform rotate-2">
+            <div className="text-center">
+              <div className="text-lg font-bold mb-1" style={{color: '#3519E2'}}>100%</div>
+              <div className="text-xs text-gray-600">Transparent</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Decorative Elements */}
+        <div className="absolute top-1/3 left-1/4 w-12 h-12 bg-gradient-to-r from-purple-400 to-blue-500 rounded-2xl transform rotate-45 opacity-20"></div>
+        <div className="absolute bottom-1/3 right-1/3 w-8 h-8 bg-gradient-to-r from-pink-400 to-purple-500 rounded-full opacity-25"></div>
+        
+        {/* Mouse Cursor Elements */}
+        <div className="absolute top-1/4 left-1/3 transform -rotate-12">
+          <div className="relative">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-gray-600">
+              <path d="M3 3L10.5 10.5M21 3L13.5 10.5M3 21L10.5 13.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+            </svg>
+            <div className="absolute -bottom-2 -right-2 w-8 h-8 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 flex items-center justify-center">
+              <div className="w-2 h-2 bg-white rounded-full"></div>
+            </div>
+          </div>
+        </div>
+
+        <div className="absolute bottom-1/4 right-1/4 transform rotate-12">
+          <div className="relative">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-gray-600">
+              <path d="M3 3L10.5 10.5M21 3L13.5 10.5M3 21L10.5 13.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+            </svg>
+            <div className="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-gradient-to-r from-green-400 to-blue-500 flex items-center justify-center">
+              <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Main Content */}
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        {/* Top Badge */}
+        <div className="inline-flex items-center gap-2 bg-white rounded-full px-6 py-3 shadow-lg border border-gray-200 mb-8">
+          <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+          <span className="text-gray-700 font-medium">Staff Augmentation Platform</span>
+          <span className="text-gray-500">Scale Instantly</span>
+          <ArrowRight className="w-4 h-4 text-gray-400" />
+        </div>
+
+        {/* Main Headline */}
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8 max-w-5xl mx-auto">
+          <span className="text-gray-900">Build teams of </span>
+          <span 
+            className="relative"
+            style={{
+              background: 'linear-gradient(135deg, #3519E2, #8b5cf6)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text'
+            }}
+          >
+            remote experts
+          </span>
+          <span className="text-gray-900"> that deliver enterprise-quality work</span>
+        </h1>
+
+        {/* Subtitle */}
+        <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-12">
+          Skip the lengthy hiring process. Get access to pre-vetted, world-class professionals 
+          ready to integrate seamlessly into your workflow.
+        </p>
+
+        {/* CTA Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+          <button 
+            className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold text-lg text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+            style={{backgroundColor: '#3519E2'}}
+          >
+            Success Stories
+          </button>
+          
+          <button className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold text-lg text-gray-700 hover:bg-gray-100 transition-all duration-300">
+            Contact Us
+          </button>
+        </div>
+
+        {/* Trust Indicators */}
+        <div className="flex flex-wrap justify-center items-center gap-8 text-gray-500">
+          <div className="flex items-center gap-2">
+            <Clock className="w-5 h-5" />
+            <span className="font-medium">Rapid deployment</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Users className="w-5 h-5" />
+            <span className="font-medium">Elite talent pool</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Shield className="w-5 h-5" />
+            <span className="font-medium">Zero hidden costs</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Background Gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-transparent to-purple-50/30 pointer-events-none"></div>
     </section>
   );
 };
