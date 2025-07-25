@@ -44,7 +44,7 @@ const Services = () => {
     },
     {
       icon: Headphones,
-      title: 'Customer Success Agents',
+      title: 'Customer Success',
       description: 'Support reps who boost retention, loyalty, and satisfaction.',
       skills: ['CRM Tools', 'Support', 'Onboarding', 'Analytics'],
       color: '#f59e0b'
@@ -58,14 +58,14 @@ const Services = () => {
     },
     {
       icon: Users,
-      title: 'B2B / D2C Sales Agents',
+      title: 'B2B/D2C Sales Agents',
       description: 'Sales reps trained to close deals and grow revenue across channels.',
       skills: ['Outbound', 'CRM', 'Email', 'Calls'],
       color: '#06b6d4'
     },
     {
       icon: DollarSign,
-      title: 'Accountants & Bookkeepers',
+      title: 'Accountants',
       description: 'Financial professionals for day-to-day operations and compliance.',
       skills: ['QuickBooks', 'Xero', 'Invoicing', 'Reconciliation'],
       color: '#16a34a'
@@ -73,7 +73,7 @@ const Services = () => {
   ];
 
   const stats = [
-    { label: 'Candidates Onboarded', value: '1,200+' },
+    { label: 'Candidates Onboarded', value: '200+' },
     { label: 'Hiring Speed', value: '7–14 Days' },
     { label: 'Client Retention Rate', value: '98%' },
     { label: 'Avg. Cost Savings', value: '40–60%' }
