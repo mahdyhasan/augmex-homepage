@@ -2,7 +2,7 @@ import React from 'react';
 import Hero from './components/Hero';
 import CombinedSection from './components/CombinedSection';
 import Services from './components/Services';
-import About from './components/About';
+//import About from './components/About';
 import Problem from './components/Problem';
 import Solution from './components/Solution';
 import Process from './components/Process';
@@ -18,7 +18,6 @@ function App() {
       <Hero />
       <Services />
       <CombinedSection />
-      <About />
       <Problem />
       <Solution />
       <Process />
