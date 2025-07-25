@@ -101,9 +101,6 @@ const Story = () => {
                 </div>
               </div>
               
-              <p className="text-xl font-semibold text-gray-900">
-                While your competitors scramble to hire, you could be scaling effortlessly.
-              </p>
             </div>
 
             {/* Benefits List */}
