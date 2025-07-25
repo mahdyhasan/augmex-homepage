@@ -267,10 +267,12 @@ const CombinedSection = () => {
               <h3 className="text-2xl font-bold mb-2">Ready to Transform Your Team?</h3>
               <p className="text-blue-200">Let's discuss how we can help you find exceptional talent</p>
             </div>
-            <button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 px-8 py-4 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center">
-              Get Started
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </button>
+            <a href="/contact-us">
+              <button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 px-8 py-4 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center">
+                Get Started
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </button>
+            </a>
           </div>
         </div>
       </div>
