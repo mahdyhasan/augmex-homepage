@@ -20,15 +20,15 @@ const WhyChooseUs = () => {
     {
       icon: Target,
       title: 'Precision Matching',
-      description: 'Our rigorous 7-stage vetting process ensures only the top 1% reach your interview stage.',
-      stat: 'Top 1%',
+      description: 'Our rigorous 7-stage vetting process ensures only the top 3% reach your interview stage.',
+      stat: 'Top 3%',
       statDesc: 'Candidate acceptance rate'
     },
     {
       icon: Users,
       title: 'Culture-First Approach',
       description: 'We don\'t just match skills - we ensure cultural alignment for long-term team harmony.',
-      stat: '95%',
+      stat: '90%',
       statDesc: 'Cultural fit success rate'
     }
   ];
@@ -41,7 +41,7 @@ const WhyChooseUs = () => {
     },
     {
       aspect: 'Candidate Quality',
-      us: 'Top 1% Only',
+      us: 'Top 3% Only',
       others: 'Variable Quality'
     },
     {
@@ -51,7 +51,7 @@ const WhyChooseUs = () => {
     },
     {
       aspect: 'Cultural Fit',
-      us: '95% Success Rate',
+      us: '90% Success Rate',
       others: '60% Success Rate'
     }
   ];
@@ -67,7 +67,7 @@ const WhyChooseUs = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
             Why Leading Companies
             <span className="block text-transparent bg-clip-text" style={{backgroundImage: 'linear-gradient(135deg, #3519E2, #8b5cf6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
-              Choose StaffAugment
+              Choose Augmex
             </span>
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
