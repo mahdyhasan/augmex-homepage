@@ -35,15 +35,20 @@ const Hero = () => {
 
         {/* CTA Buttons */}
         <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
-          <button
-            className="px-6 py-3 rounded-xl font-semibold text-white text-base shadow-md hover:shadow-lg transition-all duration-300"
-            style={{ backgroundColor: "#3519E2" }}
-          >
-            Success Stories
-          </button>
-          <button className="px-6 py-3 rounded-xl border border-gray-300 text-base font-semibold text-gray-800 hover:bg-gray-100 transition">
-            Contact Us
-          </button>
+          <a href="/success-stories">
+            <button
+              className="px-6 py-3 rounded-xl font-semibold text-white text-base shadow-md hover:shadow-lg transition-all duration-300"
+              style={{ backgroundColor: "#3519E2" }}
+            >
+              Success Stories
+            </button>
+          </a>
+          
+          <a href="/contact-us">
+            <button className="px-6 py-3 rounded-xl border border-gray-300 text-base font-semibold text-gray-800 hover:bg-gray-100 transition">
+              Contact Us
+            </button>
+          </a>
         </div>
 
         {/* Stats */}
