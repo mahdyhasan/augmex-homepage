@@ -167,13 +167,15 @@ const Services = () => {
             <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
               Let our team handle talent sourcing and onboarding while you focus on growth.
             </p>
-            <button
-              className="inline-flex items-center px-8 py-4 rounded-xl font-semibold text-lg text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-              style={{ backgroundColor: '#3519E2' }}
-            >
-              <CheckCircle className="w-4 h-4 mr-2" />
-              Get Started Today
-            </button>
+            <a href="/contact-us">
+                <button
+                  className="inline-flex items-center px-8 py-4 rounded-xl font-semibold text-lg text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                  style={{ backgroundColor: '#3519E2' }}
+                >
+                  <CheckCircle className="w-4 h-4 mr-2" />
+                  Get Started Today
+                </button>
+              </a>
           </div>
         </div>
       </div>
