@@ -1,122 +1,237 @@
-import React from 'react';
-import { AlertTriangle, Clock, DollarSign, Users, TrendingDown, Search } from 'lucide-react';
+import React, { useState } from 'react';
+import { AlertTriangle, Clock, DollarSign, Users, TrendingDown, Search, Building2, HeadphonesIcon, Target } from 'lucide-react';
 
 const Problem = () => {
+  const [hoveredProblem, setHoveredProblem] = useState(null);
+
   const problems = [
     {
       icon: Clock,
-      title: 'Endless Hiring Cycles',
-      description: 'Months of posting jobs and screening with no quality results.',
-      stat: '6+ months',
-      color: '#ef4444'
+      title: 'Lengthy Recruitment Cycles',
+      description: 'Months spent searching for skilled professionals while projects remain stalled.',
+      stat: '8+ months',
+      color: '#ef4444',
+      impact: 'Projects delayed, opportunities missed'
     },
     {
       icon: DollarSign,
-      title: 'Hidden Costs',
-      description: 'Expensive agencies and job board fees that spiral out of control.',
-      stat: '$15,000+',
-      color: '#f59e0b'
+      title: 'Escalating Overhead Costs',
+      description: 'Office space, equipment, benefits, and training expenses spiraling beyond budgets.',
+      stat: '$85K+ yearly',
+      color: '#f59e0b',
+      impact: 'Per employee operational overhead'
     },
     {
       icon: Users,
-      title: 'Poor Cultural Fit',
-      description: 'Candidates who look good on paper but fail to integrate.',
-      stat: '89% turnover',
-      color: '#ec4899'
+      title: 'Skill Gap Management',
+      description: 'Finding professionals with exact technical expertise and domain knowledge.',
+      stat: '67% mismatch',
+      color: '#ec4899',
+      impact: 'Between required vs available skills'
     },
     {
-      icon: Search,
-      title: 'Limited Talent Pool',
-      description: 'Restricted to local markets, missing global talent.',
-      stat: '3x smaller pool',
-      color: '#8b5cf6'
+      icon: Building2,
+      title: 'Infrastructure Scaling',
+      description: 'Rapid expansion requires office space, IT setup, and administrative overhead.',
+      stat: '6-12 weeks',
+      color: '#8b5cf6',
+      impact: 'Setup time for new team scaling'
     },
     {
       icon: TrendingDown,
-      title: 'Declining Quality',
-      description: 'Pressure to hire quickly leads to regrettable decisions.',
-      stat: '47% mistakes',
-      color: '#06b6d4'
+      title: 'Resource Flexibility',
+      description: 'Inability to scale teams up or down based on project demands and market changes.',
+      stat: '3x higher',
+      color: '#06b6d4',
+      impact: 'Cost compared to flexible staffing'
+    },
+    {
+      icon: HeadphonesIcon,
+      title: 'Training & Development',
+      description: 'Continuous upskilling and professional development programs drain resources.',
+      stat: '$12K+ annually',
+      color: '#10b981',
+      impact: 'Per employee training investment'
     }
   ];
 
   const costMetrics = [
-    { value: '$240K', label: 'Average cost of a bad hire', color: '#ef4444' },
-    { value: '18 Months', label: 'Time to recover', color: '#f59e0b' },
-    { value: '73%', label: 'Companies affected', color: '#ec4899' }
+    { 
+      value: '$150K+', 
+      label: 'Average annual cost per in-house developer', 
+      color: '#ef4444',
+      breakdown: 'Salary + Benefits + Infrastructure'
+    },
+    { 
+      value: '6 Months', 
+      label: 'Time to build effective team from scratch', 
+      color: '#f59e0b',
+      breakdown: 'Hiring + Onboarding + Team Sync'
+    },
+    { 
+      value: '89%', 
+      label: 'Companies struggling with scaling challenges', 
+      color: '#ec4899',
+      breakdown: 'Based on enterprise surveys'
+    }
   ];
 
   return (
-    <section id="problem" className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="problem" className="py-24 bg-white relative overflow-hidden">
+      {/* Subtle background elements */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-red-500 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-orange-500 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 right-1/3 w-32 h-32 bg-purple-500 rounded-full blur-2xl"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-red-100 text-red-700 text-sm font-medium mb-6">
-            <AlertTriangle className="w-3 h-3 mr-2" />
-            The Reality
+        <div className="text-center mb-20">
+          <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-red-50 to-orange-50 border border-red-100 text-red-700 text-sm font-semibold mb-8 shadow-sm">
+            <AlertTriangle className="w-4 h-4 mr-2" />
+            The Challenge
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            The Problem Most
-            <span className="block text-transparent bg-clip-text" style={{backgroundImage: 'linear-gradient(135deg, #ef4444, #f59e0b)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
-              Businesses Face
+          <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+            Scaling Teams
+            <span className="block bg-gradient-to-r from-red-600 via-orange-500 to-pink-600 bg-clip-text text-transparent">
+              Shouldn't Be This Hard
             </span>
           </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Growing businesses face mounting challenges when building and scaling their technical teams
+          </p>
         </div>
         
-        {/* Two Column Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-          {/* Left: Paragraph */}
-          <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
-            <h3 className="text-xl font-semibold text-gray-900 mb-6">Here's what keeps business leaders up at night:</h3>
-            <div className="space-y-4 text-gray-600 leading-relaxed">
-              <p>
-                You need amazing talent, but finding them feels impossible. You post jobs and get hundreds of resumes, but somehow none feel quite right. Your competitors seem to effortlessly attract top performers while you're stuck sifting through endless applications.
-              </p>
-              <p>
-                The hiring process drags on for months. Your team is overworked. Deadlines are slipping. And that game-changing project? It's still waiting for the right person to make it happen.
-              </p>
-              <p className="font-semibold text-gray-900">
-                Sound familiar? You're definitely not alone in this struggle.
-              </p>
+        {/* Main Content Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 mb-20">
+          {/* Left: Story */}
+          <div className="lg:col-span-2">
+            <div className="bg-gradient-to-br from-gray-50 to-white rounded-3xl p-8 shadow-lg border border-gray-100 h-full">
+              <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r from-red-500 to-orange-500 rounded-2xl mb-6">
+                <Target className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">The Reality Every Business Faces</h3>
+              <div className="space-y-5 text-gray-700 leading-relaxed">
+                <p>
+                  Your business is growing. Projects are coming in faster than ever. But finding skilled professionals 
+                  who can hit the ground running? That's where everything slows down.
+                </p>
+                <p>
+                  You need developers, designers, analysts - but hiring full-time means months of searching, 
+                  interviewing, and onboarding. Plus office space, equipment, benefits, and ongoing training costs.
+                </p>
+                <p>
+                  Meanwhile, your competitors with flexible teams are moving faster, delivering better, 
+                  and capturing market opportunities while you're still building your foundation.
+                </p>
+                <div className="bg-gradient-to-r from-red-50 to-orange-50 rounded-2xl p-6 border-l-4 border-red-500 mt-6">
+                  <p className="font-semibold text-gray-900 text-lg">
+                    "We needed to scale fast, but traditional hiring was holding us back."
+                  </p>
+                  <p className="text-sm text-gray-600 mt-2">— Common feedback from growing companies</p>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Right: Problem Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {problems.map((problem, index) => (
-              <div 
-                key={index}
-                className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 text-center group"
-              >
+          {/* Right: Problem Grid */}
+          <div className="lg:col-span-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {problems.map((problem, index) => (
                 <div 
-                  className="w-10 h-10 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300"
-                  style={{backgroundColor: `${problem.color}15`}}
+                  key={index}
+                  className="group bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 cursor-pointer relative overflow-hidden"
+                  onMouseEnter={() => setHoveredProblem(index)}
+                  onMouseLeave={() => setHoveredProblem(null)}
                 >
-                  <problem.icon className="h-4 w-4" style={{color: problem.color}} />
+                  {/* Gradient overlay on hover */}
+                  <div 
+                    className="absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-2xl"
+                    style={{background: `linear-gradient(135deg, ${problem.color}20, ${problem.color}10)`}}
+                  ></div>
+                  
+                  <div className="relative z-10">
+                    <div className="flex items-start justify-between mb-4">
+                      <div 
+                        className="w-14 h-14 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-sm"
+                        style={{backgroundColor: `${problem.color}15`}}
+                      >
+                        <problem.icon className="h-6 w-6" style={{color: problem.color}} />
+                      </div>
+                      <div className="text-right">
+                        <div className="text-2xl font-bold mb-1" style={{color: problem.color}}>
+                          {problem.stat}
+                        </div>
+                        <div className="text-xs text-gray-500 font-medium">
+                          AVERAGE
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <h4 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-gray-700 transition-colors duration-300">
+                      {problem.title}
+                    </h4>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-3">
+                      {problem.description}
+                    </p>
+                    
+                    {/* Impact shown on hover */}
+                    <div className={`text-xs font-medium transition-all duration-500 ${hoveredProblem === index ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}>
+                      <div className="bg-gray-100 rounded-lg px-3 py-2" style={{borderLeft: `3px solid ${problem.color}`}}>
+                        <span className="text-gray-600">Impact: </span>
+                        <span className="text-gray-800">{problem.impact}</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                
-                <div className="text-lg font-bold mb-2" style={{color: problem.color}}>{problem.stat}</div>
-                <h4 className="text-sm font-semibold text-gray-900 mb-2">{problem.title}</h4>
-                <p className="text-gray-600 text-xs leading-relaxed">{problem.description}</p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Real Cost of Bad Hiring */}
-        <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">The Real Cost of Bad Hiring</h3>
-            <p className="text-gray-600">Understanding the true impact on your business</p>
+        {/* Cost Analysis */}
+        <div className="bg-gradient-to-br from-gray-50 via-white to-gray-50 rounded-3xl p-10 shadow-xl border border-gray-200">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-orange-50 to-red-50 border border-orange-200 text-orange-700 text-sm font-semibold mb-6">
+              <DollarSign className="w-4 h-4 mr-2" />
+              Financial Impact
+            </div>
+            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              The True Cost of Traditional Scaling
+            </h3>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Understanding the hidden expenses that impact your bottom line
+            </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {costMetrics.map((metric, index) => (
-              <div key={index} className="text-center p-6 bg-gray-50 rounded-2xl">
-                <div className="text-3xl md:text-4xl font-bold mb-2" style={{color: metric.color}}>{metric.value}</div>
-                <div className="text-gray-600">{metric.label}</div>
+              <div key={index} className="group text-center p-8 bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div className="mb-6">
+                  <div className="text-4xl md:text-5xl font-bold mb-2" style={{color: metric.color}}>
+                    {metric.value}
+                  </div>
+                  <div className="h-1 w-16 mx-auto rounded-full mb-4" style={{backgroundColor: metric.color}}></div>
+                </div>
+                <div className="text-gray-900 font-semibold text-lg mb-3">
+                  {metric.label}
+                </div>
+                <div className="text-sm text-gray-500 bg-gray-50 rounded-lg px-4 py-2 group-hover:bg-gray-100 transition-colors duration-300">
+                  {metric.breakdown}
+                </div>
               </div>
             ))}
+          </div>
+
+          {/* Bottom CTA hint */}
+          <div className="text-center mt-12 p-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl border border-blue-100">
+            <p className="text-lg text-gray-700 mb-2">
+              <span className="font-semibold">What if there was a better way?</span>
+            </p>
+            <p className="text-gray-600">
+              A solution that eliminates these challenges while delivering exceptional results...
+            </p>
           </div>
         </div>
       </div>
