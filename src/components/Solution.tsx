@@ -276,14 +276,16 @@ const SolutionProcessSection = () => {
 
             {/* Single CTA */}
             <div className="relative">
-              <button className="group relative inline-flex items-center px-12 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-2xl font-bold text-lg text-white shadow-2xl hover:shadow-cyan-500/25 transition-all duration-300 transform hover:scale-105 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <span className="relative z-10">Start Building Your Dream Team</span>
-                <ArrowRight className="w-6 h-6 ml-3 relative z-10 group-hover:translate-x-1 transition-transform duration-300" />
-              </button>
+              <a href="/contact-us">
+                <button className="group relative inline-flex items-center px-12 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-2xl font-bold text-lg text-white shadow-2xl hover:shadow-cyan-500/25 transition-all duration-300 transform hover:scale-105 overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <span className="relative z-10">Start Building Your Dream Team</span>
+                  <ArrowRight className="w-6 h-6 ml-3 relative z-10 group-hover:translate-x-1 transition-transform duration-300" />
+                </button>
+              </a>
               
               <p className="text-sm text-blue-200 mt-4">
-                30-day guarantee • No hidden fees • Free consultation
+                No hidden fees • Free consultation
               </p>
             </div>
           </div>
