@@ -96,7 +96,7 @@ const CombinedSection = () => {
         <div className="text-center mb-20">
           <div className="inline-flex items-center justify-center p-2 bg-white/10 backdrop-blur-sm rounded-full mb-6">
             <Award className="w-6 h-6 text-yellow-400 mr-2" />
-            <span className="text-sm font-medium">Award-Winning Recruitment Agency</span>
+            <span className="text-sm font-medium">Trusted Staff Augmentation Partner</span>
           </div>
           <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
             Excellence Across Industries
