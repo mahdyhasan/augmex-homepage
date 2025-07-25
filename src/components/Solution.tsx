@@ -133,9 +133,9 @@ const SolutionProcessSection = () => {
             <div className="relative">
               <div className="relative rounded-3xl overflow-hidden bg-white/5 backdrop-blur-sm border border-white/10 p-8">
                 {/* Placeholder for office/team image */}
-                <div className="aspect-[4/3] bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-2xl flex items-center justify-center border-2 border-dashed border-white/20">
+                <div className="aspect-[3/2] bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-2xl flex items-center justify-center border-2 border-dashed border-white/20">
                   <div className="text-center">
-                    <Users className="w-16 h-16 text-white/40 mx-auto mb-4" />
+{/*                     <Users className="w-16 h-16 text-white/40 mx-auto mb-4" /> */}
                     <img src="/images/team_working_at_augmex.webp"></img>
                   </div>
                 </div>
@@ -143,7 +143,7 @@ const SolutionProcessSection = () => {
                 {/* Floating stats overlay */}
                 <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-2xl p-6 shadow-2xl border border-white/20">
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-white">500+</div>
+                    <div className="text-3xl font-bold text-white">200+</div>
                     <div className="text-cyan-100 text-sm">Professionals Placed</div>
                   </div>
                 </div>
