@@ -106,23 +106,7 @@ const Story = () => {
               </p>
             </div>
 
-            {/* Benefits List */}
-           {/* <div className="bg-gray-50 rounded-2xl p-6">
-              <h4 className="font-bold text-gray-900 mb-4 text-lg">What This Means for You:</h4>
-              <div className="space-y-3">
-                {benefits.map((benefit, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <div className="w-6 h-6 rounded-full bg-gradient-to-r from-green-400 to-blue-500 flex items-center justify-center flex-shrink-0">
-                      <CheckCircle className="w-4 h-4 text-white" />
-                    </div>
-                    <span className="text-gray-700">{benefit}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-          */}
-
+  
           {/* Right: Enhanced Image Section */}
           <div className="relative">
             <div className="relative bg-gradient-to-br from-gray-100 to-gray-200 rounded-3xl overflow-hidden shadow-2xl group">
