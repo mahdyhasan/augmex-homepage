@@ -5,7 +5,7 @@ import Services from './components/Services';
 //import About from './components/About';
 import Problem from './components/Problem';
 import Solution from './components/Solution';
-import Process from './components/Process';
+// import Process from './components/Process';
 import Results from './components/Results';
 import Testimonials from './components/Testimonials';
 import WhyChooseUs from './components/WhyChooseUs';
@@ -20,7 +20,6 @@ function App() {
       <CombinedSection />
       <Problem />
       <Solution />
-      <Process />
       <Results />
       <Testimonials />
       <WhyChooseUs />
