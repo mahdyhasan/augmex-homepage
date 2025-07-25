@@ -1,14 +1,15 @@
 import React from 'react';
-import { Clock, DollarSign, Target, Users, CheckCircle } from 'lucide-react';
+import { Clock, DollarSign, Target, Users, CheckCircle, Zap, Percent, Award, Heart } from 'lucide-react';
 
 const WhyChooseUs = () => {
-  const reasons = [
+  const benefits = [
     {
-      icon: Clock,
+      icon: Zap,
       title: 'Lightning Fast Results',
       description: 'We deliver vetted candidates in 2–3 weeks. No delays. No compromises.',
       stat: '10x Faster',
       statDesc: 'Than traditional hiring',
+      color: 'bg-blue-100 text-blue-600'
     },
     {
       icon: DollarSign,
@@ -16,84 +17,99 @@ const WhyChooseUs = () => {
       description: 'Flat monthly rates with zero hidden fees or surprise markups.',
       stat: '60–80%',
       statDesc: 'Cost savings vs local hire',
+      color: 'bg-green-100 text-green-600'
     },
     {
-      icon: Target,
+      icon: Award,
       title: 'Precision Matching',
       description: 'Only the top 3% of candidates make it past our 7-step screening.',
       stat: 'Top 3%',
       statDesc: 'Candidate acceptance rate',
+      color: 'bg-purple-100 text-purple-600'
     },
     {
-      icon: Users,
+      icon: Heart,
       title: 'Culture-First Hiring',
       description: 'We match beyond skills—fitting seamlessly into your team culture.',
       stat: '90%',
       statDesc: 'Cultural fit success rate',
+      color: 'bg-pink-100 text-pink-600'
     },
   ];
 
   const comparisons = [
-    { aspect: 'Time to Hire', us: '2–3 Weeks', others: '3–6 Months' },
-    { aspect: 'Candidate Quality', us: 'Top 3% Only', others: 'Variable Quality' },
-    { aspect: 'Cost Structure', us: 'Flat Monthly Rate', others: 'Hidden Fees + %' },
-    { aspect: 'Cultural Fit', us: '90% Success Rate', others: '60% Success Rate' },
+    { aspect: 'Time to Hire', us: '2–3 Weeks', others: '3–6 Months', icon: Clock },
+    { aspect: 'Candidate Quality', us: 'Top 3% Only', others: 'Variable Quality', icon: Target },
+    { aspect: 'Cost Structure', us: 'Flat Monthly Rate', others: 'Hidden Fees + %', icon: DollarSign },
+    { aspect: 'Cultural Fit', us: '90% Success Rate', others: '60% Success Rate', icon: Users },
   ];
 
   return (
-    <section id="why-choose-us" className="py-16 bg-white">
-      <div className="max-w-5xl mx-auto px-4">
+    <section id="why-choose-us" className="py-20 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-12">
-          <div className="inline-block px-3 py-1 text-xs font-medium text-white rounded-full" style={{ backgroundColor: '#3519E2' }}>
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <span className="inline-block px-4 py-2 text-sm font-medium text-blue-700 bg-blue-100 rounded-full mb-4">
             Why We're Different
-          </div>
-          <h2 className="mt-4 text-3xl font-bold text-gray-900">
-            Why Companies
-            <span className="block bg-gradient-to-r from-[#3519E2] to-[#8b5cf6] text-transparent bg-clip-text">
-              Choose Augmex
-            </span>
+          </span>
+          <h2 className="text-4xl font-bold text-gray-900 tracking-tight sm:text-5xl">
+            The Augmex Advantage
           </h2>
-          <p className="mt-3 text-gray-600 text-base">
-            A faster, smarter, and more human way to scale your team.
+          <p className="mt-4 text-xl text-gray-600">
+            Transform your hiring process with our unique approach to talent acquisition
           </p>
         </div>
 
-        {/* Benefits */}
-        <div className="grid gap-6 md:grid-cols-2 mb-14">
-          {reasons.map((item, index) => (
-            <div key={index} className="flex gap-4 p-5 rounded-xl border border-gray-200 bg-gray-50">
-              <div className="flex items-center justify-center w-12 h-12 rounded-md" style={{ backgroundColor: '#3519E210' }}>
-                <item.icon className="w-5 h-5 text-[#3519E2]" />
+        {/* Benefits Grid */}
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 mb-20">
+          {benefits.map((item, index) => (
+            <div 
+              key={index} 
+              className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all"
+            >
+              <div className={`inline-flex items-center justify-center w-12 h-12 rounded-lg ${item.color} mb-4`}>
+                <item.icon className="w-6 h-6" />
               </div>
-              <div className="flex-1">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-md font-semibold text-gray-900">{item.title}</h3>
-                  <div className="text-right">
-                    <div className="text-sm font-bold text-[#3519E2]">{item.stat}</div>
-                    <div className="text-xs text-gray-500">{item.statDesc}</div>
-                  </div>
-                </div>
-                <p className="mt-2 text-sm text-gray-600">{item.description}</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.title}</h3>
+              <p className="text-gray-600 mb-4">{item.description}</p>
+              <div className="mt-auto">
+                <span className="text-2xl font-bold text-gray-900">{item.stat}</span>
+                <p className="text-sm text-gray-500">{item.statDesc}</p>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Comparison Table */}
-        <div className="border border-gray-200 rounded-lg overflow-hidden">
-          <div className="bg-[#3519E2] py-3 px-4 text-white text-center text-sm font-medium">
-            Augmex vs Traditional Hiring
+        {/* Comparison Section */}
+        <div className="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200">
+          <div className="bg-gradient-to-r from-blue-600 to-purple-600 py-4 px-6 text-white">
+            <h3 className="text-xl font-semibold text-center">
+              Augmex vs. Traditional Hiring
+            </h3>
           </div>
-          <div className="divide-y divide-gray-100 text-sm">
+          
+          <div className="divide-y divide-gray-100">
+            <div className="grid grid-cols-12 px-6 py-4 bg-gray-50 text-sm font-medium text-gray-500">
+              <div className="col-span-6 lg:col-span-4">Hiring Aspect</div>
+              <div className="col-span-3 lg:col-span-4 text-center">Augmex</div>
+              <div className="col-span-3 lg:col-span-4 text-center">Others</div>
+            </div>
+            
             {comparisons.map((row, i) => (
-              <div key={i} className="grid grid-cols-3 px-4 py-3 bg-white">
-                <div className="text-gray-700 font-medium">{row.aspect}</div>
-                <div className="text-center text-green-700 font-medium flex items-center justify-center gap-1">
-                  <CheckCircle className="w-3.5 h-3.5" />
-                  {row.us}
+              <div key={i} className="grid grid-cols-12 px-6 py-5 items-center hover:bg-gray-50 transition-colors">
+                <div className="col-span-6 lg:col-span-4 flex items-center gap-3">
+                  <row.icon className="w-5 h-5 text-blue-500" />
+                  <span className="font-medium text-gray-700">{row.aspect}</span>
                 </div>
-                <div className="text-center text-gray-500">{row.others}</div>
+                <div className="col-span-3 lg:col-span-4 text-center">
+                  <span className="inline-flex items-center px-3 py-1 rounded-full bg-green-100 text-green-800 text-sm font-medium">
+                    <CheckCircle className="w-4 h-4 mr-1" />
+                    {row.us}
+                  </span>
+                </div>
+                <div className="col-span-3 lg:col-span-4 text-center text-gray-500">
+                  {row.others}
+                </div>
               </div>
             ))}
           </div>
