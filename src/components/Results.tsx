@@ -224,10 +224,18 @@ const Results = () => {
             <h4 className="text-2xl font-bold text-gray-900 mb-4">
               The Bottom Line
             </h4>
-            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-8">
               While traditional hiring drains resources and delays progress, strategic staff augmentation 
               delivers immediate results, cost savings, and the flexibility to scale with confidence.
             </p>
+            
+            <a 
+              href="/contact-us"
+              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+            >
+              Get Started Today
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </a>
           </div>
         </div>
       </div>
