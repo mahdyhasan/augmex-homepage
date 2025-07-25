@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Quote, ChevronLeft, ChevronRight, Star, Award, TrendingUp } from 'lucide-react';
+import { Quote, ChevronLeft, ChevronRight, Star } from 'lucide-react';
 
 const Testimonials = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -57,12 +57,6 @@ const Testimonials = () => {
     }
   ];
 
-  const stats = [
-    { icon: Award, value: '98%', label: 'Client Satisfaction' },
-    { icon: TrendingUp, value: '95%', label: 'Retention Rate' },
-    { icon: Star, value: '4.9/5', label: 'Average Rating' }
-  ];
-
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % testimonials.length);
   };
@@ -104,25 +98,6 @@ const Testimonials = () => {
           <p className="text-xl text-blue-200 max-w-3xl mx-auto leading-relaxed">
             Discover how companies have transformed their teams and accelerated growth with our elite remote talent
           </p>
-        </div>
-
-        {/* Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          {stats.map((stat, index) => {
-            const IconComponent = stat.icon;
-            return (
-              <div 
-                key={index}
-                className="text-center bg-white/5 backdrop-blur-lg rounded-2xl p-6 border border-white/10"
-              >
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-blue-600/20 mb-4">
-                  <IconComponent className="w-6 h-6 text-blue-400" />
-                </div>
-                <div className="text-3xl font-bold text-white mb-2">{stat.value}</div>
-                <div className="text-blue-200 text-sm">{stat.label}</div>
-              </div>
-            );
-          })}
         </div>
         
         {/* Main Testimonial Slider */}
