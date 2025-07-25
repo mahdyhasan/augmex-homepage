@@ -234,9 +234,9 @@ const SolutionProcessSection = () => {
             <div className="relative">
               <div className="relative rounded-3xl overflow-hidden bg-white/5 backdrop-blur-sm border border-white/10 p-8">
                 {/* Placeholder for workstation/development image */}
-                <div className="aspect-[4/3] bg-gradient-to-br from-indigo-600/20 to-cyan-600/20 rounded-2xl flex items-center justify-center border-2 border-dashed border-white/20">
+                <div className="aspect-[3/2] bg-gradient-to-br from-indigo-600/20 to-cyan-600/20 rounded-2xl flex items-center justify-center border-2 border-dashed border-white/20">
                   <div className="text-center">
-                    <Target className="w-16 h-16 text-white/40 mx-auto mb-4" />
+{/*                     <Target className="w-16 h-16 text-white/40 mx-auto mb-4" /> */}
                     <img src="/images/software_developers_augmex.webp"></img>
                   </div>
                 </div>
