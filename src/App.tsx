@@ -10,7 +10,7 @@ import Results from './components/Results';
 import Testimonials from './components/Testimonials';
 import WhyChooseUs from './components/WhyChooseUs';
 import Story from './components/Story';
-import CTA from './components/CTA';
+// import CTA from './components/CTA';
 
 function App() {
   return (
@@ -25,7 +25,6 @@ function App() {
       <Testimonials />
       <WhyChooseUs />
       <Story />
-      <CTA />
     </div>
   );
 }
