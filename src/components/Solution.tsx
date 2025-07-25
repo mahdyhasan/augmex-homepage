@@ -136,8 +136,7 @@ const SolutionProcessSection = () => {
                 <div className="aspect-[4/3] bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-2xl flex items-center justify-center border-2 border-dashed border-white/20">
                   <div className="text-center">
                     <Users className="w-16 h-16 text-white/40 mx-auto mb-4" />
-                    <p className="text-white/60 text-lg font-medium">Modern Office Workspace</p>
-                    <p className="text-white/40 text-sm mt-2">Replace with: Professional team working<br />in modern office environment</p>
+                    <img src="/images/team_working_at_augmex.webp"></img>
                   </div>
                 </div>
                 
@@ -238,8 +237,7 @@ const SolutionProcessSection = () => {
                 <div className="aspect-[4/3] bg-gradient-to-br from-indigo-600/20 to-cyan-600/20 rounded-2xl flex items-center justify-center border-2 border-dashed border-white/20">
                   <div className="text-center">
                     <Target className="w-16 h-16 text-white/40 mx-auto mb-4" />
-                    <p className="text-white/60 text-lg font-medium">Developer Workstation</p>
-                    <p className="text-white/40 text-sm mt-2">Replace with: Professional developer<br />working at modern workstation</p>
+                    <img src="/images/software_developers_augmex.webp"></img>
                   </div>
                 </div>
                 
