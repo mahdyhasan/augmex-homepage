@@ -190,8 +190,8 @@ const Problem = () => {
           </div>
         </div>
 
-        {/* Cost Analysis */}
-        <div className="bg-gradient-to-br from-gray-50 via-white to-gray-50 rounded-3xl p-10 shadow-xl border border-gray-200">
+        {/* Financial Impact with Image */}
+        <div className="bg-gradient-to-br from-gray-50 via-white to-gray-50 rounded-3xl p-10 shadow-xl border border-gray-200 mt-24">
           <div className="text-center mb-12">
             <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-orange-50 to-red-50 border border-orange-200 text-orange-700 text-sm font-semibold mb-6">
               <DollarSign className="w-4 h-4 mr-2" />
@@ -204,28 +204,42 @@ const Problem = () => {
               Understanding the hidden expenses that impact your bottom line
             </p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {costMetrics.map((metric, index) => (
-              <div key={index} className="group text-center p-8 bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <div className="mb-6">
-                  <div className="text-4xl md:text-5xl font-bold mb-2" style={{color: metric.color}}>
-                    {metric.value}
+        
+          {/* Image + Metrics */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            
+            {/* Left: Image */}
+            <div className="flex justify-center">
+              <img 
+                src="/images/problem_business_face.webp" 
+                alt="The problems Most Businesses Face"
+                className="w-full max-w-md rounded-2xl shadow-md"
+              />
+            </div>
+        
+            {/* Right: Metrics */}
+            <div className="space-y-6">
+              {costMetrics.map((metric, index) => (
+                <div
+                  key={index}
+                  className="bg-white p-6 rounded-2xl shadow-md border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                >
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="text-sm text-gray-500 font-medium">{metric.breakdown}</div>
+                    <div className="text-2xl font-bold" style={{ color: metric.color }}>
+                      {metric.value}
+                    </div>
                   </div>
-                  <div className="h-1 w-16 mx-auto rounded-full mb-4" style={{backgroundColor: metric.color}}></div>
+                  <div className="text-gray-800 font-semibold text-lg">
+                    {metric.label}
+                  </div>
                 </div>
-                <div className="text-gray-900 font-semibold text-lg mb-3">
-                  {metric.label}
-                </div>
-                <div className="text-sm text-gray-500 bg-gray-50 rounded-lg px-4 py-2 group-hover:bg-gray-100 transition-colors duration-300">
-                  {metric.breakdown}
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-
-          {/* Bottom CTA hint */}
-          <div className="text-center mt-12 p-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl border border-blue-100">
+        
+          {/* CTA */}
+          <div className="text-center mt-16 p-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl border border-blue-100">
             <p className="text-lg text-gray-700 mb-2">
               <span className="font-semibold">What if there was a better way?</span>
             </p>
@@ -234,6 +248,7 @@ const Problem = () => {
             </p>
           </div>
         </div>
+
       </div>
     </section>
   );
