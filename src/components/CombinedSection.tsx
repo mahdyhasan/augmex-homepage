@@ -203,7 +203,7 @@ const CombinedSection = () => {
           <div className="relative group">
             <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
             <img
-              src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop"
+              src="/images/about_augmex.webp?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop"
               alt="Augmex team"
               className="relative rounded-3xl shadow-2xl w-full h-96 object-cover transform group-hover:scale-105 transition-transform duration-500"
             />
