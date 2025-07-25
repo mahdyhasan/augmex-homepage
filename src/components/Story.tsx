@@ -45,8 +45,7 @@ const Story = () => {
               {/* Image Placeholder */}
               <div className="bg-gradient-to-br from-gray-200 to-gray-300 h-96 flex items-center justify-center">
                 <div className="text-center text-gray-500">
-                  <Users className="w-16 h-16 mx-auto mb-4 text-gray-400" />
-
+                  <img src="/images/augmex_success_stories.webp" alt="Success stories" />
                 </div>
               </div>
             </div>
