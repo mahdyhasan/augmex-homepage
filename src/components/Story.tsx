@@ -107,7 +107,7 @@ const Story = () => {
             </div>
 
             {/* Benefits List */}
-            <div className="bg-gray-50 rounded-2xl p-6">
+           {/* <div className="bg-gray-50 rounded-2xl p-6">
               <h4 className="font-bold text-gray-900 mb-4 text-lg">What This Means for You:</h4>
               <div className="space-y-3">
                 {benefits.map((benefit, index) => (
@@ -121,6 +121,7 @@ const Story = () => {
               </div>
             </div>
           </div>
+          */}
 
           {/* Right: Enhanced Image Section */}
           <div className="relative">
