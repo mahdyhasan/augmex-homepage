@@ -136,18 +136,20 @@ const CombinedSection = () => {
         {/* Trust Indicators - Company Logos */}
         <div className="mb-24">
           <div className="text-center mb-12">
-            <h3 className="text-2xl font-semibold mb-4 text-blue-200">Trusted by Industry Leaders</h3>
+            <h3 className="text-2xl font-semibold mb-4 text-blue-200">
+              Trusted by Industry Leaders
+            </h3>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {companyLogos.map((logo, index) => (
               <div
                 key={index}
-                className="bg-white/5 backdrop-blur-sm rounded-xl p-4 hover:bg-white/10 transition-all duration-300 transform hover:scale-105 border border-white/10"
+                className="bg-white/5 backdrop-blur-sm rounded-xl p-4 hover:bg-white/10 transition-all duration-300 transform hover:scale-105 border border-white/10 flex items-center justify-center"
               >
                 <img
                   src={logo}
                   alt={`Partner ${index + 1}`}
-                  className="w-full h-12 object-cover rounded-lg opacity-60 hover:opacity-80 transition-opacity duration-300 grayscale hover:grayscale-0"
+                  className="max-h-16 h-auto object-contain opacity-60 hover:opacity-80 transition-opacity duration-300 grayscale hover:grayscale-0"
                 />
               </div>
             ))}
