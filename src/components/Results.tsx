@@ -22,12 +22,12 @@ const ResultsSection = () => {
       description: 'Pre-vetted professionals vs random hires'
     },
     {
-      category: 'Total Investment',
-      before: '$85K+ per hire',
-      after: '$25K per resource',
-      improvement: '70% savings',
+      category: 'Yearly Investment',
+      before: '$160K+ per hire',
+      after: '$60K per resource',
+      improvement: '62.5% savings',
       icon: DollarSign,
-      description: 'Including overhead vs all-inclusive cost'
+      description: 'Hiring + salary + overhead vs all-inclusive cost'
     },
     {
       category: 'Performance Score',
@@ -130,17 +130,17 @@ const ResultsSection = () => {
 
                 <div className="space-y-6">
                   <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 border border-blue-100">
-                    <div className="text-4xl font-bold text-gray-900 mb-2">500+</div>
+                    <div className="text-4xl font-bold text-gray-900 mb-2">200+</div>
                     <div className="text-gray-600 font-medium">Successful Placements</div>
                   </div>
                   
                   <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-8 border border-green-100">
-                    <div className="text-4xl font-bold text-gray-900 mb-2">$50M+</div>
+                    <div className="text-4xl font-bold text-gray-900 mb-2">$35M+</div>
                     <div className="text-gray-600 font-medium">Client Savings Generated</div>
                   </div>
                   
                   <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-8 border border-purple-100">
-                    <div className="text-4xl font-bold text-gray-900 mb-2">15+</div>
+                    <div className="text-4xl font-bold text-gray-900 mb-2">5+</div>
                     <div className="text-gray-600 font-medium">Industries Served</div>
                   </div>
                 </div>
@@ -267,7 +267,7 @@ const ResultsSection = () => {
                 </a>
                 
                 <p className="text-sm text-gray-400 mt-4">
-                  30-day guarantee • No hidden fees • Free consultation
+                  No hidden fees • Free consultation
                 </p>
               </div>
             </div>
