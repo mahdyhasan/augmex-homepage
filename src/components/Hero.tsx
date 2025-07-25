@@ -10,7 +10,7 @@ const Hero = () => {
           <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
           <Star className="w-4 h-4 text-yellow-500" />
           <span className="text-gray-700 text-sm font-medium">
-            Top 3% Remote Talent Available
+            Work With Top 3% Talent
           </span>
         </div>
 
