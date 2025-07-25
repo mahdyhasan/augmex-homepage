@@ -16,11 +16,11 @@ const CombinedSection = () => {
   const stats = [
     {
       icon: Rocket,
-      number: '35K+',
+      number: '55K+',
       text: 'Hours Served',
       color: 'text-orange-400',
       bgColor: 'bg-orange-400/20',
-      description: 'Dedicated hours of expert recruitment services'
+      description: 'Hours that our resources worked with our clients'
     },
     {
       icon: TrendingUp,
@@ -49,12 +49,12 @@ const CombinedSection = () => {
   ];
 
   const companyLogos = [
-    'https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop',
-    'https://images.pexels.com/photos/159888/pexels-photo-159888.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop',
-    'https://images.pexels.com/photos/416405/pexels-photo-416405.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop',
-    'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop',
-    'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop',
-    'https://images.pexels.com/photos/3184317/pexels-photo-3184317.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop'
+    '/images/logos/a2n_infotech.webp',
+    '/images/logos/dcastalia.webp',
+    '/images/logos/tcl.webp',
+    '/images/logos/psd.webp',
+    '/images/logos/icon_college.webp',
+    '/images/logos/wine_vault.svg'
   ];
 
   const teamMembers = [
